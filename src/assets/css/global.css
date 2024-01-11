@@ -28,7 +28,7 @@ body {
   --red: #ef4444;
   --green: #10b981;
 
-  /* Font sizes ------------------------ */
+  /* Font sizes -------------------- */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
@@ -40,7 +40,7 @@ body {
   --font-size-5xl: 3rem;
   --font-size-6xl: 4rem;
 
-  /* Font weights ------------------------ */
+  /* Font weights --------------------*/
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
