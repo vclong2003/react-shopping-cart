@@ -7,6 +7,7 @@ interface ICartSlice {
   error: string | null;
 }
 
+const name = "cart";
 const initialState: ICartSlice = {
   cart: [],
   loading: false,
@@ -14,7 +15,7 @@ const initialState: ICartSlice = {
 };
 
 const cartSlice = createSlice({
-  name: "cart",
+  name,
   initialState,
   reducers: {},
 });
