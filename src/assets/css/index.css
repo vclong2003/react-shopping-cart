@@ -4,4 +4,24 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Regular", sans-serif;
+}
+
+/* Colors --------------------------------------------- */
+/*
+- App background color: #E5E7EB
+- Logo/Cart/Buttons Blue: #3B82F6
+- Plus/minus quantity button: #FF7300
+- Red cart quantity / Delete button: #EF4444
+- Green: #10B981
+ */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #6b7280;
+  --gray-light: #e5e7eb;
+  --gray-dark: #374151;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --green: #10b981;
 }
