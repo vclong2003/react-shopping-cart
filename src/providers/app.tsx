@@ -1,4 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "../store";
 
 interface IAppProviderProps {
   children: JSX.Element;
@@ -7,5 +9,9 @@ interface IAppProviderProps {
 export default function AppProvider({
   children,
 }: IAppProviderProps): JSX.Element {
-  return <BrowserRouter>{children}</BrowserRouter>;
+  return (
+    <BrowserRouter>
+      <Provider store={store}>{children}</Provider>
+    </BrowserRouter>
+  );
 }
