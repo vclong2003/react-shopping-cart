@@ -3,7 +3,7 @@ import { IProduct } from "../../interfaces";
 import { axiosInstance } from "../../lib/axios";
 import API_ENDPOINTS from "../../config/api";
 
-interface IProductSlice {
+export interface IProductSlice {
   products: IProduct[];
   loading: boolean;
   error: string | null;
