@@ -13,5 +13,9 @@ export default function Products(): JSX.Element {
 
   console.log(products);
 
-  return <div>Products</div>;
+  return (
+    <div>
+      <span>asdsasdw</span>
+    </div>
+  );
 }
