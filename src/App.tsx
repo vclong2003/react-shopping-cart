@@ -1,11 +1,11 @@
 import React from "react";
 import AppProvider from "./providers/app";
-import Header from "./components/Header/Header";
+import AppRoutes from "./routes/app";
 
 function App() {
   return (
     <AppProvider>
-      <Header />
+      <AppRoutes />
     </AppProvider>
   );
 }
