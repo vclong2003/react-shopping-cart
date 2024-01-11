@@ -1,7 +1,12 @@
 import React from "react";
+import AppProvider from "./providers/app";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <AppProvider>
+      <div>ok</div>
+    </AppProvider>
+  );
 }
 
 export default App;
