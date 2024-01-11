@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IProduct } from "../../interfaces";
 import { axiosInstance } from "../../lib/axios";
-import { API_ENDPOINTS } from "../../config/api";
+import API_ENDPOINTS from "../../config/api";
 
 interface IProductSlice {
   products: IProduct[];
