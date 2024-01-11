@@ -16,20 +16,7 @@ const initialState: IProductSlice = {
 const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {
-    getProducts: (state) => {
-      state.loading = true;
-    },
-    getProductsSuccess: (state, { payload }) => {
-      state.products = payload;
-      state.loading = false;
-      state.error = null;
-    },
-    getProductsFail: (state, { payload }) => {
-      state.loading = false;
-      state.error = payload;
-    },
-  },
+  reducers: {},
 });
 
 export default productSlice;
