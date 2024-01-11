@@ -1,6 +1,6 @@
 import React from "react";
-import AppProvider from "./providers/app";
-import AppRoutes from "./routes/app";
+import AppProvider from "./providers/AppProvider";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
