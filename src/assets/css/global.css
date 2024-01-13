@@ -4,10 +4,12 @@
 * {
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
-}
-body {
+  border: none;
+  outline: none;
   margin: 0;
   padding: 0;
+}
+body {
 }
 
 /*

@@ -1,10 +1,10 @@
-import { ReactNode } from "react";
+import { ClassAttributes, HTMLAttributes } from "react";
 import S from "./Container.styled";
 
-interface IContainerProps {
-  children: ReactNode;
-}
-
-export default function Container({ children }: IContainerProps): JSX.Element {
-  return <S.Container>{children}</S.Container>;
+export default function Container(
+  props: JSX.IntrinsicAttributes &
+    ClassAttributes<HTMLDivElement> &
+    HTMLAttributes<HTMLDivElement>
+): JSX.Element {
+  return <S.Container {...props} />;
 }
