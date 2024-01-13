@@ -8,15 +8,22 @@ const Container = styled.div`
 
   padding: 0 var(--s-3);
 
-  @media ${DEVICES.TABLET} {
+  @media ${DEVICES.PHONE} {
+    max-width: 540px;
+  }
+  @media ${DEVICES.PHONE_L} {
     max-width: 720px;
   }
-  @media ${DEVICES.LAPTOP} {
-    max-width: 960px;
+  @media ${DEVICES.TABLET} {
+    max-width: 960;
   }
   @media ${DEVICES.DESKTOP} {
     max-width: 1140px;
   }
+  @media ${DEVICES.DESKTOP_L} {
+    max-width: 1320px;
+  }
 `;
 
-export default { Container };
+const S = { Container };
+export default S;

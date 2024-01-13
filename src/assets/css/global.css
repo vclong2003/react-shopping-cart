@@ -12,16 +12,16 @@
 
 :root {
   /* Colors ------------------------ */
+  --orange: #ea7c29;
+  --red: #ef4444;
+  --green: #10b981;
+  --blue: #3b82f6;
   --white: #ffffff;
   --black: #000000;
   --gray: #6b7280;
   --gray-light: #e5e7eb;
   --gray-light-1: #e6e7eb;
   --gray-dark: #374151;
-  --blue: #3b82f6;
-  --orange: #ea7c29;
-  --red: #ef4444;
-  --green: #10b981;
 
   /* Font sizes -------------------- */
   --fs-xs: 0.75rem;
@@ -129,4 +129,17 @@ Order of properties should be:
   gap: var(--s-10);
   justify-content: flex-end;
   flex: 9;
+.linksContainer {
+  flex: 1;
+}
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }

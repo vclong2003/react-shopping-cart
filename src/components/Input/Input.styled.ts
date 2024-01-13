@@ -14,4 +14,5 @@ const Input = styled.input`
   }
 `;
 
-export default { Input };
+const S = { Input };
+export default S;

@@ -14,4 +14,5 @@ const Header = styled.div`
   box-shadow: var(--shadow-md);
 `;
 
-export default { Header };
+const S = { Header };
+export default S;
