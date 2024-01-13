@@ -76,5 +76,15 @@ body {
 .rightContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--s-3);
+}
+
+.nameContainer {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-medium);
+}
+
+.desContainer {
+  color: var(--gray);
+  font-size: var(--fs-sm);
 }

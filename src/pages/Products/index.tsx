@@ -13,11 +13,10 @@ export default function Products(): JSX.Element {
   }, [dispatch]);
 
   console.log(products);
-  const productsList = [...products];
 
   return (
     <div className="container">
-      <ProductDetail product={productsList[0]} />
+      {products.length !== 0 ? <ProductDetail product={products[0]} /> : ""}
       <div className="leftContent"></div>
     </div>
   );
