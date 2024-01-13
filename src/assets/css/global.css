@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* Global styles */
+/* Global styles -------------------- */
 * {
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
@@ -9,16 +9,7 @@
   margin: 0;
   padding: 0;
 }
-body {
-}
 
-/*
-- App background color: #E5E7EB
-- Logo/Cart/Buttons Blue: #3B82F6
-- Plus/minus quantity button: #FF7300
-- Red cart quantity / Delete button: #EF4444
-- Green: #10B981
- */
 :root {
   /* Colors ------------------------ */
   --white: #ffffff;
@@ -43,7 +34,7 @@ body {
   --fs-5xl: 3rem;
   --fs-6xl: 4rem;
 
-  /* Font weights --------------------*/
+  /* Font weights ------------------- */
   --fw-light: 300;
   --fw-normal: 400;
   --fw-medium: 500;
