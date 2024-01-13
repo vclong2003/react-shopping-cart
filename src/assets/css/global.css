@@ -95,8 +95,9 @@ Order of properties should be:
 .container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  padding: var(--s-10);
+  padding-top: var(--s-6);
+  padding-bottom: var(--s-6);
+  gap: var(--s-4);
 }
 
 .rightContent {
