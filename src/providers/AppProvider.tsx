@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "../store";
 
 import "../assets/css/global.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 interface IAppProviderProps {
   children: JSX.Element;
