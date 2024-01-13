@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router";
 import Layout from "../components/Layout/Layout";
 import Products from "../pages/Products";
-import Container from "../components/Container/Container";
 
 export default function AppRoutes(): JSX.Element {
   return (
@@ -10,9 +9,15 @@ export default function AppRoutes(): JSX.Element {
         <Route
           index
           element={
-            <Container>
-              <h1 style={{ height: "3000px", backgroundColor: "red" }}>Home</h1>
-            </Container>
+            <div>
+              <h1
+                style={{
+                  height: "3000px",
+                  backgroundColor: "var(--gray-light)",
+                }}>
+                Home
+              </h1>
+            </div>
           }
         />
         <Route path="products" element={<Products />} />
