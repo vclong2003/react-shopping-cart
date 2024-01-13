@@ -95,20 +95,6 @@ Order of properties should be:
   flex-wrap: wrap;
 }
 
-.linksContainer {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: var(--s-4);
-}
-
-.navItem {
-  text-decoration: none;
-  color: var(--gray-dark);
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-md);
-}
-
 .logo {
   flex: 1;
   display: flex;
@@ -123,4 +109,10 @@ Order of properties should be:
   flex: 1;
   display: flex;
   justify-content: flex-end;
+}
+.btn {
+  background-color: transparent;
+  font-size: var(--fs-2xl);
+  padding: 0 !important;
+  display: none;
 }
