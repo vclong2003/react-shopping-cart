@@ -3,11 +3,17 @@ import Container from "../Container/Container";
 
 import S from "./Header.styled";
 import Badge from "../Badge/Badge";
+import OffCanvas from "../OffCanvas/OffCanvas";
+import { useState } from "react";
 
 export default function Header(): JSX.Element {
+  const [show, setShow] = useState(false);
   return (
     <S.Header>
       <Container className="nav">
+        <OffCanvas show={show} onClose={() => setShow(false)}>
+          test
+        </OffCanvas>
         <div className="linksContainer">
           <NavLink className="navItem" to="/">
             Home
@@ -19,7 +25,13 @@ export default function Header(): JSX.Element {
             Reviews
           </NavLink>
         </div>
-        <div className="logo">Beauty.hd</div>
+        <div
+          className="logo"
+          onClick={() => {
+            setShow(true);
+          }}>
+          Beauty.hd
+        </div>
 
         <div className="cart">
           <Badge count={1}>
