@@ -53,6 +53,8 @@
   --s-8: 2rem;
   --s-9: 2.25rem;
   --s-10: 2.5rem;
+  --s-11: 2.75rem;
+  --s-12: 3rem;
 
   /* Border radius ------------------ */
   --br-sm: 0.125rem;
@@ -100,6 +102,10 @@ Order of properties should be:
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  color: var(--blue);
 }
 .cart {
   flex: 1;
