@@ -46,6 +46,25 @@ body {
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
+
+  /* Spacing ------------------------ */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.25rem;
+  --s-6: 1.5rem;
+  --s-7: 1.75rem;
+  --s-8: 2rem;
+  --s-9: 2.25rem;
+  --s-10: 2.5rem;
+
+  /* Border radius ------------------ */
+  --br-sm: 0.125rem;
+  --br-md: 0.25rem;
+  --br-lg: 0.5rem;
+  --br-xl: 0.75rem;
+  --br-2xl: 1rem;
 }
 
 .container {
