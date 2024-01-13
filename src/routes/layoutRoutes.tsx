@@ -3,6 +3,7 @@ import Products from "../pages/Products/Products";
 
 export const layoutRoutes: IRoute[] = [
   {
+    name: "Home",
     path: "/",
     component: (
       <div>
@@ -17,10 +18,12 @@ export const layoutRoutes: IRoute[] = [
     ),
   },
   {
+    name: "Products",
     path: "/products",
     component: <Products />,
   },
   {
+    name: "Reviews",
     path: "/reviews",
     component: <>Review</>,
   },
