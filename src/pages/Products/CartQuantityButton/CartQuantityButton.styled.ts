@@ -7,9 +7,8 @@ const QuantityBtn = styled.div`
   flex-direction: row;
   font-size: var(--fs-md);
   cursor: pointer;
-  border-radius: var(--br-lg);
+  border-radius: var(--br-md);
   overflow: hidden;
-  flex: 2;
 `;
 
 const ChangeQuantityBtn = css`
@@ -31,9 +30,11 @@ const PlusBtn = styled(Button)`
 const QuantityInput = styled(Input)`
   width: 100%;
   text-align: center;
+  font-size: var(--fs-md);
   background-color: var(--gray-light-1);
   border-radius: 0 !important;
   padding: var(--s-1) 0 !important;
+  width: calc(var(--fs-md) * 2);
 `;
 
 const S = {

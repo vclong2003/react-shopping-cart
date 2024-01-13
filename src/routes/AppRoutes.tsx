@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import Layout from "../components/Layout/Layout";
-import Products from "../pages/Products";
+import Products from "../pages/Products/Product";
 
 export default function AppRoutes(): JSX.Element {
   return (
@@ -14,7 +14,8 @@ export default function AppRoutes(): JSX.Element {
                 style={{
                   height: "3000px",
                   backgroundColor: "var(--gray-light)",
-                }}>
+                }}
+              >
                 Home
               </h1>
             </div>
