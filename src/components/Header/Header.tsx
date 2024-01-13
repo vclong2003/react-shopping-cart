@@ -14,6 +14,7 @@ export default function Header(): JSX.Element {
           <NavLink to="/reviews">Reviews</NavLink>
         </div>
         <div className="logo">Beauty.hd</div>
+
         <div className="cart">
           <Badge count={1}>
             <i
