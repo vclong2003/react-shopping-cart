@@ -57,11 +57,11 @@
   --s-12: 3rem;
 
   /* Border radius ------------------ */
-  --br-sm: 0.125rem;
-  --br-md: 0.25rem;
-  --br-lg: 0.5rem;
-  --br-xl: 0.75rem;
-  --br-2xl: 1rem;
+  --br-sm: 0.2rem;
+  --br-md: 0.4rem;
+  --br-lg: 0.8rem;
+  --br-xl: 1.6rem;
+  --br-2xl: 3.2rem;
 
   /* Shadows ------------------------ */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -92,11 +92,23 @@ Order of properties should be:
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .linksContainer {
   flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
 }
+
+.navItem {
+  text-decoration: none;
+  color: var(--gray-dark);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-md);
+}
+
 .logo {
   flex: 1;
   display: flex;

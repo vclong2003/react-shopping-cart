@@ -9,9 +9,15 @@ export default function Header(): JSX.Element {
     <S.Header>
       <Container className="nav">
         <div className="linksContainer">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/products">Products</NavLink>
-          <NavLink to="/reviews">Reviews</NavLink>
+          <NavLink className="navItem" to="/">
+            Home
+          </NavLink>
+          <NavLink className="navItem" to="/products">
+            Products
+          </NavLink>
+          <NavLink className="navItem" to="/reviews">
+            Reviews
+          </NavLink>
         </div>
         <div className="logo">Beauty.hd</div>
 
