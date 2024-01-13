@@ -6,7 +6,12 @@ export default function AppRoutes(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<h1>Home</h1>} />
+        <Route
+          index
+          element={
+            <h1 style={{ height: "3000px", backgroundColor: "red" }}>Home</h1>
+          }
+        />
         <Route path="products" element={<Products />} />
       </Route>
       <Route path="*" element={<h1>Not Found</h1>} />

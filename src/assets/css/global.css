@@ -66,3 +66,27 @@ body {
   --br-xl: 0.75rem;
   --br-2xl: 1rem;
 }
+
+/*
+Order of properties should be:
+
+1. Positioning: position, top, right, bottom, left, z-index
+2. Box model: display, box-sizing, width, height, margin, padding, border
+3. Typography: font, line-height, text-align, text-transform, color
+4. Visual: background, color, opacity
+5. Layout: float, clear, flex, grid
+6. Decoration: border-radius, box-shadow
+7. Transforms and Transitions: transform, transition
+8. Miscellaneous: cursor, overflow, visibility
+*/
+
+.navbar {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: var(--s-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
