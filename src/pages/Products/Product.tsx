@@ -3,7 +3,6 @@ import { AppDispatch, RootState } from "../../store";
 import { useEffect } from "react";
 import { fetchAllProducts } from "../../store/slices/products";
 import ProductDetail from "./ProductDetail/ProductDetail";
-import Container from "../../components/Container/Container";
 import S from "./Product.styled";
 
 export default function Products(): JSX.Element {
