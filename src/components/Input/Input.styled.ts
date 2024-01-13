@@ -9,4 +9,5 @@ const Input = styled.input`
   transition: background-color 0.2s ease-in-out;
 `;
 
-export default { Input };
+const S = { Input };
+export default S;
