@@ -47,3 +47,15 @@ body {
   --fw-semibold: 600;
   --fw-bold: 700;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
