@@ -16,6 +16,7 @@
   --black: #000000;
   --gray: #6b7280;
   --gray-light: #e5e7eb;
+  --gray-light-1: #e6e7eb;
   --gray-dark: #374151;
   --blue: #3b82f6;
   --orange: #ea7c29;
@@ -95,6 +96,7 @@ Order of properties should be:
   display: flex;
   flex-direction: row;
   gap: 20px;
+  padding: var(--s-10);
 }
 
 .rightContent {
@@ -111,4 +113,20 @@ Order of properties should be:
 .desContainer {
   color: var(--gray);
   font-size: var(--fs-sm);
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.addToCartBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--s-10);
+  justify-content: flex-end;
+  flex: 9;
 }

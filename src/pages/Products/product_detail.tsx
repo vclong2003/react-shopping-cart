@@ -1,8 +1,11 @@
-import { useState } from "react";
 import { IProduct } from "../../interfaces";
+import Button from "../../components/Button/Button";
+
+import CartQuantityButton from "./CartQuantityButton/CartQuantityButton";
+import { useState } from "react";
 
 export default function ProductDetail({ product }: { product: IProduct }) {
-  const [quantity, setQuantity] = useState<number>(0);
+  const [quantity, setQuantity] = useState<number>(1);
   return (
     <div className="rightContent">
       <div className="imgContainer">
@@ -12,12 +15,12 @@ export default function ProductDetail({ product }: { product: IProduct }) {
       <div className="desContainer">{product.description}</div>
 
       <div className="btnContainer">
-        <div className="quantityBtn"></div>
+        <CartQuantityButton quantity={quantity} onSetQuantity={setQuantity} />
         <div className="addToCartBtn">
           <div className="priceContainer">{product.price}$</div>
-          <button type="button">
+          <Button type="button">
             <i className="bi bi-cart-fill"></i> Add to cart
-          </button>
+          </Button>
         </div>
       </div>
     </div>
