@@ -6,7 +6,8 @@ const Container = styled.div`
 
   margin: 0 auto;
 
-  padding: 0 var(--s-3);
+  padding-left: var(--s-3);
+  padding-right: var(--s-3);
 
   @media ${DEVICES.PHONE} {
     max-width: 540px;
