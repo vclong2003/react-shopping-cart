@@ -12,15 +12,15 @@
 
 :root {
   /* Colors ------------------------ */
+  --orange: #ea7c29;
+  --red: #ef4444;
+  --green: #10b981;
+  --blue: #3b82f6;
   --white: #ffffff;
   --black: #000000;
   --gray: #6b7280;
   --gray-light: #e5e7eb;
   --gray-dark: #374151;
-  --blue: #3b82f6;
-  --orange: #ea7c29;
-  --red: #ef4444;
-  --green: #10b981;
 
   /* Font sizes -------------------- */
   --fs-xs: 0.75rem;
@@ -89,4 +89,19 @@ Order of properties should be:
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.linksContainer {
+  flex: 1;
+}
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }

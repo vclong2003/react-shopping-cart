@@ -14,8 +14,8 @@ const Container = styled.div`
   @media ${DEVICES.LAPTOP} {
     max-width: 960px;
   }
-  @media ${DEVICES.DESKTOP} {
-    max-width: 1140px;
+  @media ${DEVICES.LAPTOP_L} {
+    max-width: 1320px;
   }
 `;
 
