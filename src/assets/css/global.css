@@ -1,32 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* Global styles */
+/* Global styles -------------------- */
 * {
   box-sizing: border-box;
   font-family: "Fira Sans", sans-serif;
-}
-body {
+  border: none;
+  outline: none;
   margin: 0;
   padding: 0;
 }
 
-/*
-- App background color: #E5E7EB
-- Logo/Cart/Buttons Blue: #3B82F6
-- Plus/minus quantity button: #FF7300
-- Red cart quantity / Delete button: #EF4444
-- Green: #10B981
- */
 :root {
   /* Colors ------------------------ */
+  --orange: #ea7c29;
+  --red: #ef4444;
+  --green: #10b981;
+  --blue: #3b82f6;
   --white: #ffffff;
   --black: #000000;
   --gray: #6b7280;
   --gray-light: #e5e7eb;
+  --gray-light-1: #e6e7eb;
   --gray-dark: #374151;
-  --blue: #3b82f6;
-  --red: #ef4444;
-  --green: #10b981;
 
   /* Font sizes -------------------- */
   --fs-xs: 0.75rem;
@@ -40,7 +35,7 @@ body {
   --fs-5xl: 3rem;
   --fs-6xl: 4rem;
 
-  /* Font weights --------------------*/
+  /* Font weights ------------------- */
   --fw-light: 300;
   --fw-normal: 400;
   --fw-medium: 500;
@@ -65,4 +60,89 @@ body {
   --br-lg: 0.5rem;
   --br-xl: 0.75rem;
   --br-2xl: 1rem;
+
+  /* Shadows ------------------------ */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+/*
+Order of properties should be:
+
+1. Positioning: position, top, right, bottom, left, z-index
+2. Box model: display, box-sizing, width, height, margin, padding, border
+3. Typography: font, line-height, text-align, text-transform, color
+4. Visual: background, color, opacity
+5. Layout: float, clear, flex, grid
+6. Decoration: border-radius, box-shadow
+7. Transforms and Transitions: transform, transition
+8. Miscellaneous: cursor, overflow, visibility
+*/
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding-top: var(--s-6);
+  padding-bottom: var(--s-6);
+  gap: var(--s-4);
+}
+
+.rightContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.nameContainer {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-medium);
+}
+
+.desContainer {
+  color: var(--gray);
+  font-size: var(--fs-sm);
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.addToCartBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--s-10);
+  justify-content: flex-end;
+  flex: 9;
+}
+
+.linksContainer {
+  flex: 1;
+}
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
