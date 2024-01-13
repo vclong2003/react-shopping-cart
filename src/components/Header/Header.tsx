@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom";
 import Container from "../Container/Container";
 
+import S from "./Header.tyled";
+
 export default function Header(): JSX.Element {
   return (
-    <div className="navbar">
+    <S.Header>
       <Container>
         <NavLink to="/">Home</NavLink>
       </Container>
-    </div>
+    </S.Header>
   );
 }
