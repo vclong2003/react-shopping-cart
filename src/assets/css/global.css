@@ -129,6 +129,8 @@ Order of properties should be:
   gap: var(--s-10);
   justify-content: flex-end;
   flex: 9;
+}
+
 .linksContainer {
   flex: 1;
 }
