@@ -1,28 +1,20 @@
 import { Route, Routes } from "react-router";
 import Layout from "../components/Layout/Layout";
-import Products from "../pages/Products";
+import { layoutRoutes } from "./layoutRoutes";
+import { standaloneRoutes } from "./standaloneRoutes";
 
 export default function AppRoutes(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route
-          index
-          element={
-            <div>
-              <h1
-                style={{
-                  height: "3000px",
-                  backgroundColor: "var(--gray-light)",
-                }}>
-                Home
-              </h1>
-            </div>
-          }
-        />
-        <Route path="products" element={<Products />} />
+        {layoutRoutes.map(({ path, component }) => (
+          <Route key={path} path={path} element={component} />
+        ))}
       </Route>
-      <Route path="*" element={<h1>Not Found</h1>} />
+
+      {standaloneRoutes.map(({ path, component }) => (
+        <Route key={path} path={path} element={component} />
+      ))}
     </Routes>
   );
 }

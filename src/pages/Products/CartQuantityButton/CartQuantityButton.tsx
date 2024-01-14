@@ -25,7 +25,7 @@ export default function CartQuantityButton({
     if (quantity < 1) {
       onSetQuantity(1);
     }
-  }, [quantity]);
+  }, [quantity, onSetQuantity]);
 
   return (
     <S.QuantityBtn>

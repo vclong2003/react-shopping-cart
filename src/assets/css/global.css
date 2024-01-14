@@ -53,13 +53,15 @@
   --s-8: 2rem;
   --s-9: 2.25rem;
   --s-10: 2.5rem;
+  --s-11: 2.75rem;
+  --s-12: 3rem;
 
   /* Border radius ------------------ */
-  --br-sm: 0.125rem;
-  --br-md: 0.25rem;
-  --br-lg: 0.5rem;
-  --br-xl: 0.75rem;
-  --br-2xl: 1rem;
+  --br-sm: 0.2rem;
+  --br-md: 0.4rem;
+  --br-lg: 0.8rem;
+  --br-xl: 1.6rem;
+  --br-2xl: 3.2rem;
 
   /* Shadows ------------------------ */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -90,59 +92,27 @@ Order of properties should be:
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  padding-top: var(--s-6);
-  padding-bottom: var(--s-6);
-  gap: var(--s-4);
-}
-
-.rightContent {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-3);
-}
-
-.nameContainer {
-  font-size: var(--fs-3xl);
-  font-weight: var(--fw-medium);
-}
-
-.desContainer {
-  color: var(--gray);
-  font-size: var(--fs-sm);
-}
-
-.btnContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.addToCartBtn {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--s-10);
-  justify-content: flex-end;
-  flex: 9;
-}
-
-.linksContainer {
-  flex: 1;
-}
 .logo {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  color: var(--blue);
 }
 .cart {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+}
+.btn {
+  background-color: transparent;
+  font-size: var(--fs-2xl);
+  padding: 0 !important;
+  display: none;
 }

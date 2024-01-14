@@ -1,19 +1,30 @@
-import { NavLink } from "react-router-dom";
 import Container from "../Container/Container";
 
 import S from "./Header.styled";
 import Badge from "../Badge/Badge";
+import OffCanvas from "../OffCanvas/OffCanvas";
+import { useState } from "react";
+import Button from "../Button/Button";
+import NavItem from "./NavItem/NavItem";
+import NavList from "./NavList/NavList";
 
 export default function Header(): JSX.Element {
+  const [show, setShow] = useState(false);
   return (
     <S.Header>
       <Container className="nav">
-        <div className="linksContainer">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/products">Products</NavLink>
-          <NavLink to="/reviews">Reviews</NavLink>
-        </div>
-        <div className="logo">Beauty.hd</div>
+        <Button
+          className="btn"
+          onClick={() => {
+            setShow(true);
+          }}>
+          <i className="bi bi-list"></i>
+        </Button>
+        <OffCanvas show={show} onClose={() => setShow(false)}>
+          test
+        </OffCanvas>
+        <NavList />
+        <div className="logo">Beauty.com</div>
 
         <div className="cart">
           <Badge count={1}>
