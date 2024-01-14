@@ -52,7 +52,7 @@ const AddToCartBtn = styled(Button)`
   color: var(--white);
 `;
 
-const S = {
+export {
   ProductDetail,
   ImageContainer,
   Image,
@@ -63,5 +63,3 @@ const S = {
   Splitter,
   AddToCartBtn,
 };
-
-export default S;

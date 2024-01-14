@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect } from "react";
-import S from "./CartQuantityButton.styled";
+import * as S from "./CartQuantityButton.styled";
 
 interface ICartQuantityButtonProps {
   quantity: number;

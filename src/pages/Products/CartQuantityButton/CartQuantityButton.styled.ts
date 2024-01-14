@@ -37,11 +37,4 @@ const QuantityInput = styled(Input)`
   width: calc(var(--fs-md) * 2);
 `;
 
-const S = {
-  QuantityBtn,
-  MinusBtn,
-  PlusBtn,
-  QuantityInput,
-};
-
-export default S;
+export { QuantityBtn, MinusBtn, PlusBtn, QuantityInput };

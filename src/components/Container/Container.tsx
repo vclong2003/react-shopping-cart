@@ -1,5 +1,5 @@
 import { ClassAttributes, HTMLAttributes } from "react";
-import S from "./Container.styled";
+import * as S from "./Container.styled";
 
 export default function Container(
   props: JSX.IntrinsicAttributes &

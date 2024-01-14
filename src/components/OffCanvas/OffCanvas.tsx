@@ -1,4 +1,4 @@
-import S from "./OffCanvas.styled";
+import * as S from "./OffCanvas.styled";
 
 interface IOffCanvasProps {
   children?: React.ReactNode;
