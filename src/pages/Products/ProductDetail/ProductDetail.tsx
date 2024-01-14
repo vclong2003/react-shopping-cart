@@ -1,7 +1,7 @@
 import { IProduct } from "../../../interfaces";
 import * as S from "./ProductDetail.styled";
-import CartQuantityButton from "../../../components/QuanityInput/QuantityInput";
 import { useState } from "react";
+import QuantityInput from "../../../components/QuanityInput/QuantityInput";
 
 interface IProductDetailProps {
   product: IProduct;
@@ -21,7 +21,7 @@ export default function ProductDetail({ product }: IProductDetailProps) {
       <S.Description>{description}</S.Description>
 
       <S.ButtonRow>
-        <CartQuantityButton quantity={quantity} onSetQuantity={setQuantity} />
+        <QuantityInput quantity={quantity} onSetQuantity={setQuantity} />
         <S.Splitter />
         <S.Price>{price}$</S.Price>
         <S.AddToCartBtn>

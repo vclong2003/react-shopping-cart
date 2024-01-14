@@ -29,18 +29,14 @@ export default function QuantityInput({
   }, [quantity, onSetQuantity]);
 
   return (
-    <S.QuantityBtn>
-      <S.MinusBtn onClick={decreaseQuantity}>
+    <S.QuantityInput>
+      <S.ChangeValueBtn disabled={quantity === 1} onClick={decreaseQuantity}>
         <i className="bi bi-dash"></i>
-      </S.MinusBtn>
-      <S.QuantityInput
-        type="number"
-        value={quantity}
-        onChange={handleQuantityInput}
-      />
-      <S.PlusBtn onClick={increaseQuantity}>
+      </S.ChangeValueBtn>
+      <S.Input type="number" value={quantity} onChange={handleQuantityInput} />
+      <S.ChangeValueBtn onClick={increaseQuantity}>
         <i className="bi bi-plus"></i>
-      </S.PlusBtn>
-    </S.QuantityBtn>
+      </S.ChangeValueBtn>
+    </S.QuantityInput>
   );
 }
