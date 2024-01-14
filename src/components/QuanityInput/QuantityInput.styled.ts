@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import Button from "../../../components/Button/Button";
-import Input from "../../../components/Input/Input";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
 
 const QuantityBtn = styled.div`
   display: flex;

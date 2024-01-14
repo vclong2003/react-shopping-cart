@@ -1,15 +1,15 @@
 import { ChangeEvent, useEffect } from "react";
-import * as S from "./CartQuantityButton.styled";
+import * as S from "./QuantityInput.styled";
 
-interface ICartQuantityButtonProps {
+interface IQuantityInput {
   quantity: number;
   onSetQuantity: (quantity: number) => void;
 }
 
-export default function CartQuantityButton({
+export default function QuantityInput({
   quantity,
   onSetQuantity,
-}: ICartQuantityButtonProps) {
+}: IQuantityInput) {
   const increaseQuantity = () => {
     onSetQuantity(quantity + 1);
   };
@@ -18,8 +18,9 @@ export default function CartQuantityButton({
     onSetQuantity(quantity - 1);
   };
 
-  const handleQuantityInput = (e: ChangeEvent<HTMLInputElement>) =>
+  const handleQuantityInput = (e: ChangeEvent<HTMLInputElement>) => {
     onSetQuantity(Number(e.target.value));
+  };
 
   useEffect(() => {
     if (quantity < 1) {

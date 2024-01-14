@@ -1,6 +1,6 @@
 import { IProduct } from "../../../interfaces";
 import * as S from "./ProductDetail.styled";
-import CartQuantityButton from "../CartQuantityButton/CartQuantityButton";
+import CartQuantityButton from "../../../components/QuanityInput/QuantityInput";
 import { useState } from "react";
 
 interface IProductDetailProps {
