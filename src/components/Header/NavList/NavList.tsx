@@ -3,9 +3,9 @@ import NavItem from "../NavItem/NavItem";
 
 import * as S from "./NavList.styled";
 
-export default function NavList(): JSX.Element {
+export default function NavList(props: JSX.IntrinsicAttributes): JSX.Element {
   return (
-    <S.NavList>
+    <S.NavList {...props}>
       {layoutRoutes.map(({ name, path }) => (
         <NavItem key={path} title={name} to={path} />
       ))}
