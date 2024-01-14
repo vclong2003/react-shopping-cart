@@ -3,6 +3,7 @@ import { default as BaseNavList } from "./NavList/NavList";
 import { DEVICES } from "../../config/responsiveBreakpoints";
 import Button from "../Button/Button";
 import Container from "../Container/Container";
+import { Link } from "react-router-dom";
 
 const Header = styled.div`
   position: sticky;
@@ -62,7 +63,7 @@ const ResponsiveNavButton = styled(Button)`
   }
 `;
 
-const CartButton = styled.div`
+const CartButton = styled(Link)`
   flex: 1;
   display: flex;
   justify-content: flex-end;

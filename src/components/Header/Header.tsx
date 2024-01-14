@@ -21,7 +21,7 @@ export default function Header(): JSX.Element {
         <S.NavList />
         <S.Logo>Beauty.com</S.Logo>
 
-        <S.CartButton>
+        <S.CartButton to="/checkout">
           <Badge count={1}>
             <S.CartIcon>
               <i className="bi bi-cart-fill" />
