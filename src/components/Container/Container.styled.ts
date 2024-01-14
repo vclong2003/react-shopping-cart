@@ -26,5 +26,4 @@ const Container = styled.div`
   }
 `;
 
-const S = { Container };
-export default S;
+export { Container };

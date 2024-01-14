@@ -25,5 +25,4 @@ const Badge = styled.span`
   border-radius: 100%;
 `;
 
-const S = { BadgeContainer, Badge };
-export default S;
+export { BadgeContainer, Badge };

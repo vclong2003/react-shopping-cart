@@ -1,4 +1,4 @@
-import S from "./Badge.styled";
+import * as S from "./Badge.styled";
 
 interface IBadgeProps {
   count: number;

@@ -1,7 +1,7 @@
 import { NavLink as BaseNavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const NavLink = styled(BaseNavLink)`
+const NavLink = styled(BaseNavLink)`
   text-decoration: none;
   color: var(--gray);
 
@@ -14,3 +14,5 @@ export const NavLink = styled(BaseNavLink)`
     font-weight: var(--fw-bold);
   }
 `;
+
+export { NavLink };

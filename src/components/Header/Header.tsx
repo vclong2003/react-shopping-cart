@@ -1,39 +1,33 @@
-import Container from "../Container/Container";
-
-import S from "./Header.styled";
+import * as S from "./Header.styled";
 import Badge from "../Badge/Badge";
 import OffCanvas from "../OffCanvas/OffCanvas";
 import { useState } from "react";
-import Button from "../Button/Button";
-import NavItem from "./NavItem/NavItem";
-import NavList from "./NavList/NavList";
 
 export default function Header(): JSX.Element {
-  const [show, setShow] = useState(false);
+  const [isOffcanavsVisible, setIsOffCanvasVisible] = useState<boolean>(false);
+
+  const openOffcanvas = () => setIsOffCanvasVisible(true);
+  const closeOffCanvas = () => setIsOffCanvasVisible(false);
+
   return (
     <S.Header>
-      <Container className="nav">
-        <Button
-          className="btn"
-          onClick={() => {
-            setShow(true);
-          }}>
+      <S.Nav>
+        <S.ResponsiveNavButton onClick={openOffcanvas}>
           <i className="bi bi-list"></i>
-        </Button>
-        <OffCanvas show={show} onClose={() => setShow(false)}>
-          test
+        </S.ResponsiveNavButton>
+        <OffCanvas show={isOffcanavsVisible} onClose={closeOffCanvas}>
+          <S.VerticalNavList />
         </OffCanvas>
-        <NavList />
-        <div className="logo">Beauty.com</div>
-
-        <div className="cart">
+        <S.NavList />
+        <S.Logo>Beauty.com</S.Logo>
+        <S.CartButton to="/checkout">
           <Badge count={1}>
-            <i
-              style={{ fontSize: "1.5rem", color: "var(--blue)" }}
-              className="bi bi-cart-fill"></i>
+            <S.CartIcon>
+              <i className="bi bi-cart-fill" />
+            </S.CartIcon>
           </Badge>
-        </div>
-      </Container>
+        </S.CartButton>
+      </S.Nav>
     </S.Header>
   );
 }

@@ -21,5 +21,4 @@ const Right = styled.div`
   flex: 5;
 `;
 
-const S = { ProductPage, PageContent, Left, Right };
-export default S;
+export { ProductPage, PageContent, Left, Right };

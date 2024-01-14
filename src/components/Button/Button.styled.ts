@@ -8,5 +8,4 @@ const Button = styled.button`
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 `;
 
-const S = { Button };
-export default S;
+export { Button };
