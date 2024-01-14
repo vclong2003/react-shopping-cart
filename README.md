@@ -1,5 +1,5 @@
-Project structure
-
+# Project structure
+```
 src
 |
 +-- assets            # assets folder can contain all the static files such as images, fonts, etc.
@@ -23,3 +23,4 @@ src
 +-- interfaces        # shared interfaces
 |
 +-- utils             # shared utility functions
+```
