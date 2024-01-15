@@ -13,10 +13,6 @@ export default function CartItem({ cartItem }: ICartItemProps) {
 
   const [quantity, setQuantity] = useState<number>(initialQuantity);
 
-  // const handleRemove = () => {
-  //   dispatch(removeProduct(productId));
-  // };
-
   return (
     <S.CartItemContainer>
       <S.Left>
@@ -24,7 +20,7 @@ export default function CartItem({ cartItem }: ICartItemProps) {
       </S.Left>
       <S.Right>
         <S.ProductDetails>
-          <h3>{productName}</h3>
+          <S.ProductName>{productName}</S.ProductName>
           <S.DetailDescription>{description}</S.DetailDescription>
         </S.ProductDetails>
         <S.Actions>

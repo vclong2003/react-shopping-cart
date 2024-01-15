@@ -11,7 +11,8 @@ export const CartListContainer = styled.div`
   }
 `;
 
-export const EmptyCartMessage = styled.p`
+export const EmptyCartMessage = styled.h3`
+  margin-top: var(--s-10);
   text-align: center;
-  color: #888;
+  color: var(--black);
 `;
