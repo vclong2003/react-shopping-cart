@@ -53,3 +53,12 @@ export const Right = styled.div`
   row-gap: var(--s-4);
 `;
 export const Prices = styled.h1``;
+
+
+export const ButtonRemove = styled.button`
+  background: none;
+  display: flex;
+  flex-direction: row-reverse;
+  cursor: pointer;
+  
+`;
