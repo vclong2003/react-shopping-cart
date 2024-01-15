@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Container from "../../components/Container/Container";
+import { DEVICES } from "../../config/responsiveBreakpoints";
 
 const ProductPage = styled.div`
   padding-top: var(--s-6);
@@ -14,11 +15,19 @@ const PageContent = styled(Container)`
 `;
 
 const Left = styled.div`
-  flex: 7;
+  display: none;
+
+  @media ${DEVICES.TABLET} {
+    display: block;
+    flex: 7;
+  }
 `;
 
 const Right = styled.div`
-  flex: 5;
+  width: 100%;
+  @media ${DEVICES.TABLET} {
+    flex: 5;
+  }
 `;
 
 export { ProductPage, PageContent, Left, Right };

@@ -10,20 +10,20 @@ interface IProductItemProps {
 
 export default function ProductItem({ product }: IProductItemProps) {
   const dispatch = useDispatch<AppDispatch>();
-
+  const { imageUrl, productName, description, price } = product;
   const handleSelect = () => dispatch(selectProduct(product));
 
   return (
     <S.ProductItem>
       <S.ImageContainer>
-        <S.Image src={product.imageUrl} alt="" />
+        <S.Image src={imageUrl} alt="" />
       </S.ImageContainer>
       <S.Details>
-        <S.Name>{product.productName}</S.Name>
-        <S.Description>{product.description}</S.Description>
+        <S.Name>{productName}</S.Name>
+        <S.Description>{description}</S.Description>
         <S.Splitter></S.Splitter>
         <S.MoreDetails>
-          <S.Price>${product.price}</S.Price>
+          <S.Price>${price}</S.Price>
           <S.Splitter></S.Splitter>
           <S.MoreDetailsClickable onClick={handleSelect}>
             Details
