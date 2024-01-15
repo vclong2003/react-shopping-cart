@@ -6,9 +6,11 @@ export const Checkout = styled.div`
   min-height: 100vh;
   padding: var(--s-4) 0;
 `;
+
 export const CheckoutContainer = styled(Container)``;
+
 export const CheckoutTitle = styled.h1`
-  border-radius: var(--br-lg);
+  border-radius: var(--br-md);
   box-shadow: var(--shadow-md);
   background-color: var(--white);
   text-align: center;

@@ -11,7 +11,7 @@ export const CartItemContainer = styled.div`
   gap: var(--s-5);
   flex-wrap: wrap;
   box-shadow: var(--shadow-md);
-  border-radius: var(--br-lg);
+  border-radius: var(--br-md);
 `;
 
 export const ProductImage = styled.img`
