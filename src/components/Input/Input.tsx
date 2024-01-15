@@ -1,6 +1,6 @@
 import { ClassAttributes, InputHTMLAttributes } from "react";
 
-import S from "./Input.styled";
+import * as S from "./Input.styled";
 
 export default function Input(
   props: JSX.IntrinsicAttributes &

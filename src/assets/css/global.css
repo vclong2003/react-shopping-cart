@@ -53,13 +53,15 @@
   --s-8: 2rem;
   --s-9: 2.25rem;
   --s-10: 2.5rem;
+  --s-11: 2.75rem;
+  --s-12: 3rem;
 
   /* Border radius ------------------ */
-  --br-sm: 0.125rem;
-  --br-md: 0.25rem;
-  --br-lg: 0.5rem;
-  --br-xl: 0.75rem;
-  --br-2xl: 1rem;
+  --br-sm: 0.2rem;
+  --br-md: 0.4rem;
+  --br-lg: 0.8rem;
+  --br-xl: 1.6rem;
+  --br-2xl: 3.2rem;
 
   /* Shadows ------------------------ */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);

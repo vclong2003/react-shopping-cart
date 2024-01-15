@@ -3,8 +3,8 @@ import { AppDispatch, RootState } from "../../store";
 import { useEffect } from "react";
 import { fetchAllProducts } from "../../store/slices/products";
 import ProductDetail from "./ProductDetail/ProductDetail";
-import S from "./Product.styled";
 import ProductList from "./ProductList/ProductList";
+import * as S from "./Products.styled";
 
 export default function Products(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
@@ -13,8 +13,6 @@ export default function Products(): JSX.Element {
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, [dispatch]);
-
-  console.log(products);
 
   return (
     <S.ProductPage>
