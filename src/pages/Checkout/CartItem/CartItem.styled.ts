@@ -18,7 +18,6 @@ export const ProductImage = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
-  margin-right: 10px;
 `;
 
 export const ProductName = styled.h3``;
