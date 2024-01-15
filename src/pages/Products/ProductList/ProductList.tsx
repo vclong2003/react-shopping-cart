@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector } from "react-redux";
 import ProductItem from "../ProductItem/ProductItem";
 import S from "./ProductList.styled";

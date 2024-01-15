@@ -1,3 +1,4 @@
+import React from "react";
 import { IRoute } from "../interfaces";
 import Checkout from "../pages/Checkout/Checkout";
 import Home from "../pages/Home/Home";

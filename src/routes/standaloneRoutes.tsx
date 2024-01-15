@@ -1,3 +1,4 @@
+import React from "react";
 import { IRoute } from "../interfaces";
 
 export const standaloneRoutes: IRoute[] = [

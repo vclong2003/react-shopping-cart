@@ -1,3 +1,4 @@
+import React from "react";
 import * as S from "./Header.styled";
 import Badge from "../Badge/Badge";
 import OffCanvas from "../OffCanvas/OffCanvas";

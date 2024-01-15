@@ -1,3 +1,4 @@
+import React from "react";
 import * as S from "./NavItem.styled";
 
 interface INavItemProps {

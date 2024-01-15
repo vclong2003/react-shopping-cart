@@ -1,3 +1,4 @@
+import React from "react";
 import { IProduct } from "../../../interfaces";
 import * as S from "./ProductDetail.styled";
 import { useState } from "react";
@@ -29,8 +30,7 @@ export default function ProductDetail({ product }: IProductDetailProps) {
         <S.Splitter />
         <S.Price>{price}$</S.Price>
         <S.AddToCartBtn
-          onClick={() => dispatch(addCartItem({ product, quantity }))}
-        >
+          onClick={() => dispatch(addCartItem({ product, quantity }))}>
           <i className="bi bi-cart-fill"></i> Add to cart
         </S.AddToCartBtn>
       </S.ButtonRow>

@@ -1,3 +1,4 @@
+import React from "react";
 import { ChangeEvent, useEffect } from "react";
 import * as S from "./QuantityInput.styled";
 

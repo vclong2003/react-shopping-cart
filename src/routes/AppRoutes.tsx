@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router";
 import Layout from "../components/Layout/Layout";
 import { layoutRoutes } from "./layoutRoutes";
@@ -13,7 +14,7 @@ export default function AppRoutes(): JSX.Element {
       </Route>
 
       {standaloneRoutes.map(({ path, component }) => (
-        <Route key={path} path={path} element={component} /> 
+        <Route key={path} path={path} element={component} />
       ))}
     </Routes>
   );
