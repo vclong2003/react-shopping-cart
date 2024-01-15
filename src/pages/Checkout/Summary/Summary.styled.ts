@@ -1,10 +1,19 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { DEVICES } from "../../../config/responsiveBreakpoints";
+import Button from "../../../components/Button/Button";
+
+export const Summary = styled.div`
+  width: 100%;
+  @media ${DEVICES.TABLET} {
+    flex: 4;
+  }
+`;
 
 export const SummaryContainer = styled.div`
-  border: 1px solid #ddd;
   padding: 20px;
-  margin-top: 20px;
   background-color: #fff;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--br-lg);
 `;
 
 export const SummaryTitle = styled.h2`
@@ -19,23 +28,28 @@ export const SummaryItem = styled.div`
   margin-bottom: 10px;
 `;
 
-export const TotalLabel = styled.span`
+export const TotalLabel = styled.h1`
   font-weight: bold;
 `;
 
-export const TotalAmount = styled.span`
+export const TotalAmount = styled.h1`
   color: #e74c3c;
 `;
 
-export const CheckoutButton = styled.button`
-  background-color: #3498db;
+export const CheckoutButton = styled(Button)`
+  background-color: var(--blue);
+  margin: var(--s-3) 0;
+  font-size: var(--fs-lg);
   color: #fff;
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
-  margin-top: 10px;
+  width: 100%;
+`;
 
-  &:hover {
-    background-color: #2980b9;
-  }
+export const ContinueButton = styled(Button)`
+  background-color: transparent;
+  width: 100%;
+  font-size: var(--fs-lg);
+  border: 1px solid var(--blue);
+  color: var(--blue);
 `;
