@@ -6,6 +6,8 @@ export interface IProduct {
   price: number;
 }
 
+
+
 export interface ICartItem {
   product: IProduct;
   quantity: number;
