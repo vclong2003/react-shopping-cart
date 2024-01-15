@@ -19,7 +19,7 @@ export default function Header(): JSX.Element {
           <S.VerticalNavList />
         </OffCanvas>
         <S.NavList />
-        <S.Logo>Beauty.com</S.Logo>
+        <S.Logo href="/">Beauty.com</S.Logo>
         <S.CartButton to="/checkout">
           <Badge count={1}>
             <S.CartIcon>

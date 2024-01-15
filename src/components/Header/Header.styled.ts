@@ -25,13 +25,14 @@ const Nav = styled(Container)`
   justify-content: space-between;
 `;
 
-const Logo = styled.div`
+const Logo = styled.a`
   flex: 1;
   display: flex;
   align-items: center;
   padding: 0 var(--s-4);
   font-size: var(--fs-2xl);
   font-weight: var(--fw-semibold);
+  text-decoration: none;
   color: var(--blue);
 
   @media ${DEVICES.TABLET} {
