@@ -12,15 +12,15 @@ export const CheckoutTitle = styled.h1`
   box-shadow: var(--shadow-md);
   background-color: var(--white);
   text-align: center;
-  color: --black;
-  padding: 20px;
-  font-size: 16px;
+  color: var(--black);
+  padding: var(--s-4);
+  font-size: var(--s-5);
 `;
 
 export const CheckoutContent = styled.div`
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  gap: var(--s-4);
+  margin-top: var(--s-4);
   flex-wrap: wrap;
   align-items: flex-start;
 `;

@@ -21,9 +21,10 @@ export const ProductImage = styled.img`
   margin-right: 10px;
 `;
 
+export const ProductName = styled.h3``;
+
 export const ProductDetails = styled.div`
   flex-grow: 1;
-  margin-right: 10px;
 `;
 
 export const Actions = styled.div`
@@ -32,18 +33,6 @@ export const Actions = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-`;
-
-export const RemoveButton = styled.button`
-  background-color: #ff6464;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #d63030;
-  }
 `;
 
 export const DetailDescription = styled.div`
