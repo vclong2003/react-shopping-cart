@@ -3,26 +3,33 @@ import * as S from "./Summary.styled";
 import useCartSummary from "../../../hooks/useCartSummary";
 
 const Summary = (): JSX.Element => {
-  const { totalPrice, shippingCost } = useCartSummary();
+  const { cart, totalPrice, shippingCost } = useCartSummary();
   return (
     <S.Summary>
       <S.SummaryContainer>
         <S.SummaryTitle>Order Info</S.SummaryTitle>
         <S.SummaryItem>
-          <span>Subtotal:</span>
-          <span>${totalPrice}</span>
+          <S.Subtotal>Subtotal:</S.Subtotal>
+          <S.TotalPrice>${totalPrice}</S.TotalPrice>
         </S.SummaryItem>
         <S.SummaryItem>
-          <span>Shipping Cost:</span>
-          <span>${shippingCost}</span>
+          <S.ShippingCost>Shipping Cost:</S.ShippingCost>
+          <S.CostPrice>${shippingCost}</S.CostPrice>
         </S.SummaryItem>
         <S.SummaryItem>
           <S.TotalLabel>Total:</S.TotalLabel>
           <S.TotalAmount>${totalPrice + shippingCost}</S.TotalAmount>
         </S.SummaryItem>
       </S.SummaryContainer>
-      <S.CheckoutButton>Checkout</S.CheckoutButton>
-      <S.ContinueButton>Continue shopping</S.ContinueButton>
+      <S.CheckoutButton
+        disabled={cart.length === 0}
+        onClick={() => console.log("ftdf")}
+      >
+        Checkout
+      </S.CheckoutButton>
+      <S.ContinueButton onClick={() => (window.location.href = "/products")}>
+        Continue shopping
+      </S.ContinueButton>
     </S.Summary>
   );
 };
