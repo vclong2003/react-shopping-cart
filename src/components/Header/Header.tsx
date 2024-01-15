@@ -2,12 +2,16 @@ import * as S from "./Header.styled";
 import Badge from "../Badge/Badge";
 import OffCanvas from "../OffCanvas/OffCanvas";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 export default function Header(): JSX.Element {
   const [isOffcanavsVisible, setIsOffCanvasVisible] = useState<boolean>(false);
 
   const openOffcanvas = () => setIsOffCanvasVisible(true);
   const closeOffCanvas = () => setIsOffCanvasVisible(false);
+
+  const { cart } = useSelector((state: RootState) => state.cart);
 
   return (
     <S.Header>
@@ -21,7 +25,7 @@ export default function Header(): JSX.Element {
         <S.NavList />
         <S.Logo href="/">Beauty.com</S.Logo>
         <S.CartButton to="/checkout">
-          <Badge count={1}>
+          <Badge count={cart.length}>
             <S.CartIcon>
               <i className="bi bi-cart-fill" />
             </S.CartIcon>
