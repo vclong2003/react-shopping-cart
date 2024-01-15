@@ -5,7 +5,11 @@ const BadgeContainer = styled.div`
   position: relative;
 `;
 
-const Badge = styled.span`
+interface IBadgeProps {
+  $show?: boolean;
+}
+
+const Badge = styled.span<IBadgeProps>`
   position: absolute;
   top: calc(var(--s-2) * -1);
   right: calc(var(--s-2) * -1);
@@ -23,6 +27,8 @@ const Badge = styled.span`
   align-items: center;
 
   border-radius: 100%;
+
+  visibility: ${(props) => (props.$show ? "visible" : "hidden")};
 `;
 
 export { BadgeContainer, Badge };
