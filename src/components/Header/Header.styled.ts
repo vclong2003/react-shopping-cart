@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { default as BaseNavList } from "./NavList/NavList";
+import { DEVICES } from "../../config/responsiveBreakpoints";
+import Button from "../Button/Button";
+import Container from "../Container/Container";
+import { Link } from "react-router-dom";
 
 const Header = styled.div`
   position: sticky;
@@ -14,5 +19,69 @@ const Header = styled.div`
   box-shadow: var(--shadow-md);
 `;
 
-const S = { Header };
-export default S;
+const Nav = styled(Container)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const Logo = styled.a`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--s-4);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  color: var(--blue);
+
+  @media ${DEVICES.TABLET} {
+    justify-content: center;
+  }
+`;
+
+const NavList = styled(BaseNavList)`
+  display: none;
+
+  @media ${DEVICES.TABLET} {
+    display: flex;
+  }
+`;
+
+const VerticalNavList = styled(BaseNavList)`
+  flex-direction: column;
+  row-gap: var(--s-6);
+  margin: var(--s-6) var(--s-10);
+`;
+
+const ResponsiveNavButton = styled(Button)`
+  background-color: transparent;
+  font-size: var(--fs-2xl);
+  padding: 0 !important;
+
+  @media ${DEVICES.TABLET} {
+    display: none;
+  }
+`;
+
+const CartButton = styled(Link)`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const CartIcon = styled.div`
+  font-size: var(--fs-2xl);
+  color: var(--blue);
+`;
+
+export {
+  Header,
+  Nav,
+  Logo,
+  NavList,
+  VerticalNavList,
+  ResponsiveNavButton,
+  CartButton,
+  CartIcon,
+};

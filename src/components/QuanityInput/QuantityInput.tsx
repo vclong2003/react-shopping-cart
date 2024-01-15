@@ -1,15 +1,15 @@
 import { ChangeEvent, useEffect } from "react";
-import S from "./CartQuantityButton.styled";
+import * as S from "./QuantityInput.styled";
 
-interface ICartQuantityButtonProps {
+interface IQuantityInput {
   quantity: number;
   onSetQuantity: (quantity: number) => void;
 }
 
-export default function CartQuantityButton({
+export default function QuantityInput({
   quantity,
   onSetQuantity,
-}: ICartQuantityButtonProps) {
+}: IQuantityInput) {
   const increaseQuantity = () => {
     onSetQuantity(quantity + 1);
   };
@@ -18,8 +18,9 @@ export default function CartQuantityButton({
     onSetQuantity(quantity - 1);
   };
 
-  const handleQuantityInput = (e: ChangeEvent<HTMLInputElement>) =>
+  const handleQuantityInput = (e: ChangeEvent<HTMLInputElement>) => {
     onSetQuantity(Number(e.target.value));
+  };
 
   useEffect(() => {
     if (quantity < 1) {
@@ -28,18 +29,14 @@ export default function CartQuantityButton({
   }, [quantity, onSetQuantity]);
 
   return (
-    <S.QuantityBtn>
-      <S.MinusBtn onClick={decreaseQuantity}>
+    <S.QuantityInput>
+      <S.ChangeValueBtn disabled={quantity === 1} onClick={decreaseQuantity}>
         <i className="bi bi-dash"></i>
-      </S.MinusBtn>
-      <S.QuantityInput
-        type="number"
-        value={quantity}
-        onChange={handleQuantityInput}
-      />
-      <S.PlusBtn onClick={increaseQuantity}>
+      </S.ChangeValueBtn>
+      <S.Input type="number" value={quantity} onChange={handleQuantityInput} />
+      <S.ChangeValueBtn onClick={increaseQuantity}>
         <i className="bi bi-plus"></i>
-      </S.PlusBtn>
-    </S.QuantityBtn>
+      </S.ChangeValueBtn>
+    </S.QuantityInput>
   );
 }

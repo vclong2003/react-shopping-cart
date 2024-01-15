@@ -87,32 +87,3 @@ Order of properties should be:
 7. Transforms and Transitions: transform, transition
 8. Miscellaneous: cursor, overflow, visibility
 */
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.logo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: var(--fs-2xl);
-  font-weight: var(--fw-semibold);
-  color: var(--blue);
-}
-.cart {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-.btn {
-  background-color: transparent;
-  font-size: var(--fs-2xl);
-  padding: 0 !important;
-  display: none;
-}

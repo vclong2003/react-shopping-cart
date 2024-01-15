@@ -44,5 +44,4 @@ const Overlay = styled.div<IOverlayProps>`
   }
 `;
 
-const S = { OffCanvas, Backdrop, Overlay };
-export default S;
+export { OffCanvas, Backdrop, Overlay };

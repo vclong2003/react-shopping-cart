@@ -1,30 +1,21 @@
 import { IRoute } from "../interfaces";
+import Checkout from "../pages/Checkout/Checkout";
+import Home from "../pages/Home/Home";
 import Products from "../pages/Products/Products";
+import Review from "../pages/Reviews/Review";
 
 export const layoutRoutes: IRoute[] = [
   {
-    name: "Home",
     path: "/",
-    component: (
-      <div>
-        <h1
-          style={{
-            height: "3000px",
-            backgroundColor: "var(--gray-light)",
-          }}>
-          Home
-        </h1>
-      </div>
-    ),
+    component: <Home />,
   },
   {
-    name: "Products",
     path: "/products",
     component: <Products />,
   },
   {
-    name: "Reviews",
     path: "/reviews",
-    component: <>Review</>,
+    component: <Review />,
   },
+  { path: "/checkout", component: <Checkout /> },
 ];
