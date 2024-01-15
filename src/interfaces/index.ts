@@ -18,3 +18,9 @@ export interface ICartItem {
   product: IProduct;
   quantity: number;
 }
+
+export interface IRoute {
+  name: string;
+  path: string;
+  component: JSX.Element;
+}
