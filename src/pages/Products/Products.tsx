@@ -14,6 +14,8 @@ export default function Products(): JSX.Element {
     dispatch(fetchAllProducts());
   }, [dispatch]);
 
+  console.log(products);
+
   return (
     <S.ProductPage>
       <S.PageContent>

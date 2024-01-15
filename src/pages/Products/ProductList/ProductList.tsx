@@ -11,11 +11,7 @@ export default function ProductList({ products }: IProductListProp) {
         return (
           <div className="ListItem" key={index}>
             <div className="ImageContainer">
-              <img
-                className="Image"
-                src="https://picsum.photos/200/300"
-                alt=""
-              />
+              <img className="Image" src={product.imageUrl} alt="" />
             </div>
             <div className="Details">
               <div style={{ width: "100%" }}>
