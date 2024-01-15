@@ -9,13 +9,12 @@ export default function CartList() {
 
   return (
     <S.CartListContainer>
-      <S.CartListTitle>Giỏ hàng của bạn</S.CartListTitle>
       {cart.length > 0 ? (
         cart.map((cartItem) => (
           <CartItem key={cartItem.product.productId} cartItem={cartItem} />
         ))
       ) : (
-        <S.EmptyCartMessage>Giỏ hàng của bạn đang trống.</S.EmptyCartMessage>
+        <S.EmptyCartMessage>You have no prducts in cart.</S.EmptyCartMessage>
       )}
     </S.CartListContainer>
   );

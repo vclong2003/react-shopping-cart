@@ -8,27 +8,26 @@ interface ICartItemProps {
 }
 
 export default function CartItem({ cartItem }: ICartItemProps) {
+  const { quantity: initialQuantity, product } = cartItem;
+  const { imageUrl, productName, description, price } = product;
 
-  const [quantity, setQuantity] = useState<number>(1);
-  const { imageUrl, productName, description, price } = cartItem.product;
-
-  // const handleRemove = () => {
-  //   dispatch(removeProduct(productId));
-  // };
+  const [quantity, setQuantity] = useState<number>(initialQuantity);
 
   return (
     <S.CartItemContainer>
-      <S.ProductImage src={imageUrl} alt="" />
-      <S.ProductDetails>
-        <h3>{productName}</h3>
-        <p>{description}</p>
-      </S.ProductDetails>
-      <S.Actions>
-        <p>Giá: ${price}</p>
-        <p>Số lượng: {quantity}</p>
-        <QuantityInput quantity={quantity} onSetQuantity={setQuantity} />
-        {/* <RemoveButton onClick={handleRemove}>Xóa</RemoveButton> */}
-      </S.Actions>
+      <S.Left>
+        <S.ProductImage src={imageUrl} alt="" />
+      </S.Left>
+      <S.Right>
+        <S.ProductDetails>
+          <S.ProductName>{productName}</S.ProductName>
+          <S.DetailDescription>{description}</S.DetailDescription>
+        </S.ProductDetails>
+        <S.Actions>
+          <QuantityInput quantity={quantity} onSetQuantity={setQuantity} />
+          <S.Prices> ${price * quantity}</S.Prices>
+        </S.Actions>
+      </S.Right>
     </S.CartItemContainer>
   );
 }

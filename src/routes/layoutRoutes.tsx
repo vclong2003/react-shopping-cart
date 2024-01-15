@@ -10,7 +10,7 @@ export const layoutRoutes: IRoute[] = [
     component: <Home />,
   },
   {
-    path: "/products",
+    path: "/products/*",
     component: <Products />,
   },
   {
