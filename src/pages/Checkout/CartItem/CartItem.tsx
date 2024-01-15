@@ -8,9 +8,10 @@ interface ICartItemProps {
 }
 
 export default function CartItem({ cartItem }: ICartItemProps) {
+  const { quantity: initialQuantity, product } = cartItem;
+  const { imageUrl, productName, description, price } = product;
 
-  const [quantity, setQuantity] = useState<number>(1);
-  const { imageUrl, productName, description, price } = cartItem.product;
+  const [quantity, setQuantity] = useState<number>(initialQuantity);
 
   // const handleRemove = () => {
   //   dispatch(removeProduct(productId));
