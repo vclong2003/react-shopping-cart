@@ -1,9 +1,10 @@
-enum API_ENDPOINTS {
-  // BASE_URL = "http://localhost:4000/api",
-  BASE_URL = "https://vcl-shopping-cart-api.onrender.com/api",
+const API_BASE_URL =
+  (process.env.API_URL as string) || "http://localhost:4000/api";
 
-  PRODUCTS = "/products",
-  CHECKOUT = "/checkout",
-}
+console.log("API_BASE_URL", API_BASE_URL);
+const API_ENDPOINTS = {
+  PRODUCTS: "/products",
+  CHECKOUT: "/checkout",
+};
 
-export default API_ENDPOINTS;
+export { API_BASE_URL, API_ENDPOINTS };
