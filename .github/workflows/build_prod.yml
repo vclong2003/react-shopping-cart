@@ -3,11 +3,11 @@
 
 name: Build Prod
 
-on:
-  push:
-    branches: ["prod"]
-  pull_request:
-    branches: ["prod"]
+# on:
+#   push:
+#     branches: ["prod"]
+#   pull_request:
+#     branches: ["prod"]
 
 jobs:
   build:
