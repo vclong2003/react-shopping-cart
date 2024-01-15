@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./Summary.styled";
 import useCartSummary from "../../../hooks/useCartSummary";
+import { roundPrice } from "../../../utils/number.utils";
 
 const Summary = (): JSX.Element => {
   const { cart, totalPrice, shippingCost } = useCartSummary();
@@ -10,7 +11,7 @@ const Summary = (): JSX.Element => {
         <S.SummaryTitle>Order Info</S.SummaryTitle>
         <S.SummaryItem>
           <S.Subtotal>Subtotal:</S.Subtotal>
-          <S.TotalPrice>${totalPrice}</S.TotalPrice>
+          <S.TotalPrice>${roundPrice(totalPrice)}</S.TotalPrice>
         </S.SummaryItem>
         <S.SummaryItem>
           <S.ShippingCost>Shipping Cost:</S.ShippingCost>
@@ -18,13 +19,14 @@ const Summary = (): JSX.Element => {
         </S.SummaryItem>
         <S.SummaryItem>
           <S.TotalLabel>Total:</S.TotalLabel>
-          <S.TotalAmount>${totalPrice + shippingCost}</S.TotalAmount>
+          <S.TotalAmount>
+            ${roundPrice(totalPrice + shippingCost)}
+          </S.TotalAmount>
         </S.SummaryItem>
       </S.SummaryContainer>
       <S.CheckoutButton
         disabled={cart.length === 0}
-        onClick={() => console.log("ftdf")}
-      >
+        onClick={() => console.log("ftdf")}>
         Checkout
       </S.CheckoutButton>
       <S.ContinueButton onClick={() => (window.location.href = "/products")}>
