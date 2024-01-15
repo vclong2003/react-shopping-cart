@@ -3,8 +3,8 @@ import { AppDispatch, RootState } from "../../store";
 import { useEffect } from "react";
 import { fetchAllProducts } from "../../store/slices/products";
 import ProductDetail from "./ProductDetail/ProductDetail";
-import Container from "../../components/Container/Container";
 import S from "./Product.styled";
+import ProductList from "./ProductList/ProductList";
 
 export default function Products(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
@@ -22,7 +22,9 @@ export default function Products(): JSX.Element {
         <S.Left>
           {products.length !== 0 ? <ProductDetail product={products[0]} /> : ""}
         </S.Left>
-        <S.Right></S.Right>
+        <S.Right>
+          {products.length !== 0 ? <ProductList products={products} /> : ""}
+        </S.Right>
       </S.PageContent>
     </S.ProductPage>
   );

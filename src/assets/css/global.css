@@ -106,3 +106,55 @@ Order of properties should be:
   display: flex;
   justify-content: flex-end;
 }
+
+.ProductList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.ListItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--s-8);
+  background-color: var(--white);
+}
+
+.ImageContainer {
+  flex: 2;
+}
+
+.Image {
+  width: 100%;
+  height: auto;
+}
+
+.Details {
+  flex: 10;
+}
+
+.Name {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-normal);
+}
+
+.Description {
+  color: var(--gray);
+  font-size: var(--fs-sm);
+}
+
+.MoreDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Price {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+}
+
+.DetailsClickable {
+  color: var(--blue);
+}
