@@ -13,7 +13,7 @@ export const SummaryContainer = styled.div`
   padding: var(--s-4);
   background-color: var(--white);
   box-shadow: var(--shadow-md);
-  border-radius: var(--br-lg);
+  border-radius: var(--br-md);
 `;
 
 export const SummaryTitle = styled.h3`
