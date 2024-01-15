@@ -6,7 +6,7 @@ const BadgeContainer = styled.div`
 `;
 
 interface IBadgeProps {
-  $show?: boolean;
+  $hidden?: boolean;
 }
 
 const Badge = styled.span<IBadgeProps>`
@@ -28,7 +28,7 @@ const Badge = styled.span<IBadgeProps>`
 
   border-radius: 100%;
 
-  visibility: ${(props) => (props.$show ? "visible" : "hidden")};
+  visibility: ${(props) => (props.$hidden ? "hidden" : "visible")};
 `;
 
 export { BadgeContainer, Badge };
