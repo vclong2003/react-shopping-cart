@@ -1,10 +1,11 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IProduct } from "../../interfaces";
 import { axiosInstance } from "../../lib/axios";
 import { API_ENDPOINTS } from "../../config/api";
 
 export interface IProductSlice {
   products: IProduct[];
+  selectedProduct: IProduct | null;
   loading: boolean;
   error: string | null;
 }
@@ -12,6 +13,7 @@ export interface IProductSlice {
 const name = "products";
 const initialState: IProductSlice = {
   products: [],
+  selectedProduct: null,
   loading: false,
   error: null,
 };
@@ -27,7 +29,11 @@ const fetchAllProducts = createAsyncThunk(
 const productSlice = createSlice({
   name,
   initialState,
-  reducers: {},
+  reducers: {
+    selectProduct: (state, action: PayloadAction<IProduct>) => {
+      state.selectedProduct = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchAllProducts.pending, (state) => {
       state.loading = true;
@@ -39,5 +45,6 @@ const productSlice = createSlice({
   },
 });
 
+export const { selectProduct } = productSlice.actions;
 export default productSlice;
 export { fetchAllProducts };
