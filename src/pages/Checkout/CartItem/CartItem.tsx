@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { ICartItem } from "../../../interfaces";
 import QuantityInput from "../../../components/QuanityInput/QuantityInput";
 import * as S from "./CartItem.styled";
@@ -9,7 +8,7 @@ interface ICartItemProps {
 }
 
 export default function CartItem({ cartItem }: ICartItemProps) {
-  const dispatch = useDispatch();
+
   const [quantity, setQuantity] = useState<number>(1);
   const { imageUrl, productName, description, price } = cartItem.product;
 
