@@ -4,8 +4,8 @@ import QuantityInput from "../../../components/QuanityInput/QuantityInput";
 import * as S from "./CartItem.styled";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
-import { changeItemQuantity } from "../../../store/slices/cart";
-import { roundPrice } from "../../../utils/number.utils";
+import { changeItemQuantity, removeItemFromCart} from "../../../store/slices/cart";
+
 
 interface ICartItemProps {
   cartItem: ICartItem;
@@ -21,19 +21,26 @@ export default function CartItem({ cartItem }: ICartItemProps) {
     dispatch(changeItemQuantity({ product, quantity }));
   }, [quantity, dispatch, product]);
 
+ 
+
+ 
+  const handleRemoveFromCart = () => {
+    dispatch(removeItemFromCart(cartItem.product.productId));
+  };
   return (
     <S.CartItemContainer>
       <S.Left>
         <S.ProductImage src={imageUrl} alt="" />
       </S.Left>
       <S.Right>
+        <S.ButtonRemove  onClick={handleRemoveFromCart}><i className="bi bi-trash" style={{color:'red'}}></i></S.ButtonRemove>
         <S.ProductDetails>
           <S.ProductName>{productName}</S.ProductName>
           <S.DetailDescription>{description}</S.DetailDescription>
         </S.ProductDetails>
         <S.Actions>
           <QuantityInput quantity={quantity} onSetQuantity={setQuantity} />
-          <S.Prices> ${roundPrice(price * quantity)}</S.Prices>
+          <S.Prices> ${price * quantity}</S.Prices>
         </S.Actions>
       </S.Right>
     </S.CartItemContainer>
