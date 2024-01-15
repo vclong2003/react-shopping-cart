@@ -1,16 +1,21 @@
+import React from "react";
 import { IProduct } from "../../../interfaces";
 import * as S from "./ProductDetail.styled";
 import { useState } from "react";
 import QuantityInput from "../../../components/QuanityInput/QuantityInput";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../store";
+import { addCartItem } from "../../../store/slices/cart";
 
 interface IProductDetailProps {
   product: IProduct;
 }
 
 export default function ProductDetail({ product }: IProductDetailProps) {
+  const { imageUrl, productName, description, price } = product;
   const [quantity, setQuantity] = useState<number>(1);
 
-  const { imageUrl, productName, description, price } = product;
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <S.ProductDetail>
@@ -24,7 +29,8 @@ export default function ProductDetail({ product }: IProductDetailProps) {
         <QuantityInput quantity={quantity} onSetQuantity={setQuantity} />
         <S.Splitter />
         <S.Price>{price}$</S.Price>
-        <S.AddToCartBtn>
+        <S.AddToCartBtn
+          onClick={() => dispatch(addCartItem({ product, quantity }))}>
           <i className="bi bi-cart-fill"></i> Add to cart
         </S.AddToCartBtn>
       </S.ButtonRow>

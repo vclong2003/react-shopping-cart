@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Button from "../Button/Button";
 import { default as BaseInput } from "../Input/Input";
 

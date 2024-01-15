@@ -37,7 +37,7 @@ const Overlay = styled.div<IOverlayProps>`
   transition: visibility 0.2s ease-in-out;
   ${OffCanvas} {
     transform: ${(props) =>
-      props.$show ? "translateX(0)" : "translateX(-100%)"};
+    props.$show ? "translateX(0)" : "translateX(-100%)"};
   }
   ${Backdrop} {
     opacity: ${(props) => (props.$show ? "0.2" : "0")};

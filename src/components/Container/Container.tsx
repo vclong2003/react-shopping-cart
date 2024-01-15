@@ -1,3 +1,4 @@
+import React from "react";
 import { ClassAttributes, HTMLAttributes } from "react";
 import * as S from "./Container.styled";
 

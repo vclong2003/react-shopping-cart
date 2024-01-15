@@ -1,3 +1,4 @@
+import React from "react";
 import NavItem from "../NavItem/NavItem";
 
 import * as S from "./NavList.styled";

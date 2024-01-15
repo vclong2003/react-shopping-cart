@@ -1,3 +1,4 @@
+import React from "react";
 import { IRoute } from "../interfaces";
 import Checkout from "../pages/Checkout/Checkout";
 import Home from "../pages/Home/Home";
@@ -10,7 +11,7 @@ export const layoutRoutes: IRoute[] = [
     component: <Home />,
   },
   {
-    path: "/products",
+    path: "/products/*",
     component: <Products />,
   },
   {

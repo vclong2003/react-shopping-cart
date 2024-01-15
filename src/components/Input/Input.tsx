@@ -1,3 +1,4 @@
+import React from "react";
 import { ClassAttributes, InputHTMLAttributes } from "react";
 
 import * as S from "./Input.styled";
