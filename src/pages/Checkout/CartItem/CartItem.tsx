@@ -5,6 +5,7 @@ import * as S from "./CartItem.styled";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
 import { changeItemQuantity, removeItemFromCart} from "../../../store/slices/cart";
+import { roundPrice } from "../../../utils/number.utils";
 
 
 interface ICartItemProps {
@@ -21,9 +22,6 @@ export default function CartItem({ cartItem }: ICartItemProps) {
     dispatch(changeItemQuantity({ product, quantity }));
   }, [quantity, dispatch, product]);
 
- 
-
- 
   const handleRemoveFromCart = () => {
     dispatch(removeItemFromCart(cartItem.product.productId));
   };
@@ -40,7 +38,7 @@ export default function CartItem({ cartItem }: ICartItemProps) {
         </S.ProductDetails>
         <S.Actions>
           <QuantityInput quantity={quantity} onSetQuantity={setQuantity} />
-          <S.Prices> ${price * quantity}</S.Prices>
+          <S.Prices> ${roundPrice(price * quantity)}</S.Prices>
         </S.Actions>
       </S.Right>
     </S.CartItemContainer>
