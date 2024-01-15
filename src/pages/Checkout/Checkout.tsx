@@ -19,8 +19,9 @@ const Checkout: React.FC = () => {
   const total = subtotal + shippingCost;
 
   return (
-    <S.CheckoutContainer>
-      <S.CheckoutTitle>Thanh toán</S.CheckoutTitle>
+    <S.Checkout>
+      <S.CheckoutContainer>
+      <S.CheckoutTitle>My shopping cart</S.CheckoutTitle>
       <S.CheckoutContent>
         {/* Hiển thị danh sách sản phẩm trong giỏ hàng */}
         <CartList />
@@ -28,7 +29,8 @@ const Checkout: React.FC = () => {
         {/* Hiển thị tổng cộng và nút thanh toán */}
         <Summary subtotal={subtotal} shippingCost={shippingCost} total={total} />
       </S.CheckoutContent>
-    </S.CheckoutContainer>
+      </S.CheckoutContainer>
+    </S.Checkout>
   );
 };
 
