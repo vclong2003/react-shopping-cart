@@ -1,10 +1,15 @@
 import React from "react";
 import * as S from "./Summary.styled";
 import useCartSummary from "../../../hooks/useCartSummary";
+
+import { useNavigate } from "react-router-dom";
+
 import { roundPrice } from "../../../utils/number.utils";
+
 
 const Summary = (): JSX.Element => {
   const { cart, totalPrice, shippingCost } = useCartSummary();
+  const navigate = useNavigate();
   return (
     <S.Summary>
       <S.SummaryContainer>
@@ -24,12 +29,10 @@ const Summary = (): JSX.Element => {
           </S.TotalAmount>
         </S.SummaryItem>
       </S.SummaryContainer>
-      <S.CheckoutButton
-        disabled={cart.length === 0}
-        onClick={() => console.log("ftdf")}>
-        Checkout
-      </S.CheckoutButton>
-      <S.ContinueButton onClick={() => (window.location.href = "/products")}>
+
+      <S.CheckoutButton disabled={cart.length === 0}>Checkout</S.CheckoutButton>
+      <S.ContinueButton onClick={() => navigate("/products")}>
+
         Continue shopping
       </S.ContinueButton>
     </S.Summary>
