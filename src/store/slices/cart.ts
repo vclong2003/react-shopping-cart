@@ -19,10 +19,40 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addCartItem: (state, action: PayloadAction<ICartItem>) => {
-      state.cart = [...state.cart, action.payload];
+      const newCartItem = action.payload;
+      const {
+        quantity: newItemQuantity,
+        product: { productId: newProductId },
+      } = newCartItem;
+
+      const existingCartItemIndex = state.cart.findIndex(
+        (cartItem) => cartItem.product.productId === newProductId
+      );
+
+      // Item already exists in cart
+      if (existingCartItemIndex !== -1) {
+        state.cart[existingCartItemIndex].quantity += newItemQuantity;
+        return;
+      }
+
+      state.cart.push(newCartItem);
+    },
+    changeItemQuantity: (state, action: PayloadAction<ICartItem>) => {
+      const {
+        product: { productId },
+        quantity: newQuantity,
+      } = action.payload;
+
+      const existingCartItemIndex = state.cart.findIndex(
+        (cartItem) => cartItem.product.productId === productId
+      );
+
+      if (existingCartItemIndex === -1) return;
+
+      state.cart[existingCartItemIndex].quantity = newQuantity;
     },
   },
 });
 
-export const { addCartItem } = cartSlice.actions;
+export const { addCartItem, changeItemQuantity } = cartSlice.actions;
 export default cartSlice;

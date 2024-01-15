@@ -18,5 +18,5 @@ export default function useCartSummary() {
 
   useEffect(() => setTotalPrice(calcTotal()), [calcTotal]);
 
-  return { totalPrice, shippingCost };
+  return { cart, totalPrice, shippingCost };
 }
