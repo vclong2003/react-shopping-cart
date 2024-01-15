@@ -6,7 +6,7 @@ const ProductDetail = styled.div`
   flex-direction: column;
   gap: var(--s-3);
   background-color: var(--white);
-  padding: var(--s-10) var(--s-6);
+  padding: var(--s-5) var(--s-6) var(--s-10) var(--s-6);
   border-radius: var(--br-md);
   box-shadow: var(--shadow-md);
   overflow: hidden;
