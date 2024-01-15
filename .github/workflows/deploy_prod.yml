@@ -8,8 +8,7 @@ on:
       - prod
 
 jobs:
-  build_and_deploy:
-    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+  build_and_deploy_prod:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
