@@ -9,7 +9,6 @@ export default function CartList() {
 
   return (
     <S.CartListContainer>
-      <S.CartListTitle>Giỏ hàng của bạn</S.CartListTitle>
       {cart.length > 0 ? (
         cart.map((cartItem) => (
           <CartItem key={cartItem.product.productId} cartItem={cartItem} />
