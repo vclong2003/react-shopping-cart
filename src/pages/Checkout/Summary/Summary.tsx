@@ -13,7 +13,7 @@ const Summary = (): JSX.Element => {
 
   const handleCheckout = () => {
     const confirmCheckout = window.confirm(
-      "Do you want to proceed with the payment?"
+      "Do you want to proceed with the payment?",
     );
 
     if (confirmCheckout) {
