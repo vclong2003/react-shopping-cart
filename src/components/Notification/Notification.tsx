@@ -10,18 +10,22 @@ const Notification = () => {
     (state: RootState) => state.notification,
   );
 
-  const { message } = notification || {};
+  const { message, type } = notification || {};
 
   useEffect(() => {
     if (!notification) return;
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       dispatch(clearNotification());
     }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [dispatch, notification]);
 
   return (
-    <S.NotificationContainer $show={notification !== null}>
+    <S.NotificationContainer $type={type} $show={notification !== null}>
       <S.Message>{message}</S.Message>
     </S.NotificationContainer>
   );
