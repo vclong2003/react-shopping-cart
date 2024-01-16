@@ -3,7 +3,7 @@ import { IProduct } from "../../interfaces";
 import { axiosInstance } from "../../lib/axios";
 import { API_ENDPOINTS } from "../../config/api";
 
-export interface IProductSlice {
+export interface IProductState {
   products: IProduct[];
   selectedProduct: IProduct | null;
   loading: boolean;
@@ -11,7 +11,7 @@ export interface IProductSlice {
 }
 
 const name = "products";
-const initialState: IProductSlice = {
+const initialState: IProductState = {
   products: [],
   selectedProduct: null,
   loading: false,
@@ -23,14 +23,14 @@ const fetchAllProducts = createAsyncThunk(
   async () => {
     const response = await axiosInstance.get(API_ENDPOINTS.PRODUCTS);
     return response.data;
-  }
+  },
 );
 
-const productSlice = createSlice({
+const product = createSlice({
   name,
   initialState,
   reducers: {
-    selectProduct: (state, action: PayloadAction<IProduct>) => {
+    selectProduct: (state, action: PayloadAction<IProduct | null>) => {
       state.selectedProduct = action.payload;
     },
   },
@@ -45,6 +45,6 @@ const productSlice = createSlice({
   },
 });
 
-export const { selectProduct } = productSlice.actions;
-export default productSlice;
+export const { selectProduct } = product.actions;
+export default product;
 export { fetchAllProducts };

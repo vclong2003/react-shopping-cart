@@ -2,7 +2,7 @@ import React from "react";
 import { IProduct } from "../../../interfaces";
 import S from "./ProductItem.styled";
 import { useDispatch } from "react-redux";
-import { selectProduct } from "../../../store/slices/products";
+import { selectProduct } from "../../../store/slices/product";
 import { AppDispatch } from "../../../store";
 
 interface IProductItemProps {

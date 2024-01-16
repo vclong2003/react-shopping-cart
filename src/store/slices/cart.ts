@@ -1,20 +1,20 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ICartItem } from "../../interfaces";
 
-interface ICartSlice {
+interface ICartState {
   cart: ICartItem[];
   loading: boolean;
   error: string | null;
 }
 
 const name = "cart";
-const initialState: ICartSlice = {
+const initialState: ICartState = {
   cart: [],
   loading: false,
   error: null,
 };
 
-const cartSlice = createSlice({
+const cart = createSlice({
   name,
   initialState,
   reducers: {
@@ -26,7 +26,7 @@ const cartSlice = createSlice({
       } = newCartItem;
 
       const existingCartItemIndex = state.cart.findIndex(
-        (cartItem) => cartItem.product.productId === newProductId
+        (cartItem) => cartItem.product.productId === newProductId,
       );
 
       // Item already exists in cart
@@ -44,26 +44,22 @@ const cartSlice = createSlice({
       } = action.payload;
 
       const existingCartItemIndex = state.cart.findIndex(
-        (cartItem) => cartItem.product.productId === productId
+        (cartItem) => cartItem.product.productId === productId,
       );
 
       if (existingCartItemIndex === -1) return;
 
       state.cart[existingCartItemIndex].quantity = newQuantity;
     },
-    
+
     removeItemFromCart: (state, action: PayloadAction<string>) => {
-      state.cart = state.cart.filter((cart) => cart.product.productId !== action.payload);
+      state.cart = state.cart.filter(
+        (cart) => cart.product.productId !== action.payload,
+      );
     },
-    
   },
 });
 
-
-
- 
-
-
-
-export const { addCartItem, changeItemQuantity,  removeItemFromCart  } = cartSlice.actions;
-export default cartSlice;
+export const { addCartItem, changeItemQuantity, removeItemFromCart } =
+  cart.actions;
+export default cart;

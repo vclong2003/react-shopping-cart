@@ -1,3 +1,5 @@
+import { ENotificationType } from "../enum";
+
 export interface IProduct {
   productId: string;
   productName: string;
@@ -5,8 +7,6 @@ export interface IProduct {
   imageUrl: string;
   price: number;
 }
-
-
 
 export interface ICartItem {
   product: IProduct;
@@ -16,4 +16,9 @@ export interface ICartItem {
 export interface IRoute {
   path: string;
   component: JSX.Element;
+}
+
+export interface INotification {
+  message: string;
+  type: ENotificationType;
 }
