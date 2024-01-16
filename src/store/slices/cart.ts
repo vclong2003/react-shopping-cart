@@ -57,17 +57,9 @@ const cartSlice = createSlice({
         (cart) => cart.product.productId !== action.payload
       );
     },
-
-    showNotification: (state, action: PayloadAction<{ message: string }>) => {
-      // Xử lý hành động
-    },
   },
 });
 
-export const {
-  addCartItem,
-  changeItemQuantity,
-  removeItemFromCart,
-  showNotification,
-} = cartSlice.actions;
+export const { addCartItem, changeItemQuantity, removeItemFromCart } =
+  cartSlice.actions;
 export default cartSlice;
