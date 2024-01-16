@@ -9,7 +9,7 @@ export const CartItemContainer = styled.div`
   width: 100%;
   padding: var(--s-5);
   background-color: var(--white);
-  gap: var(--s-5);
+  gap: var(--s-4);
   flex-wrap: wrap;
   box-shadow: var(--shadow-md);
   border-radius: var(--br-md);
@@ -18,6 +18,7 @@ export const CartItemContainer = styled.div`
 export const ProductImage = styled.img`
   width: 100%;
   height: auto;
+  border-radius: var(--br-md);
   object-fit: cover;
 `;
 
@@ -53,7 +54,10 @@ export const Right = styled.div`
   flex-direction: column;
   row-gap: var(--s-4);
 `;
-export const Prices = styled.h1``;
+export const Prices = styled.div`
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+`;
 
 export const ButtonRemove = styled(Button)`
   background: none;
