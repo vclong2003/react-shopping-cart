@@ -26,7 +26,7 @@ const cartSlice = createSlice({
       } = newCartItem;
 
       const existingCartItemIndex = state.cart.findIndex(
-        (cartItem) => cartItem.product.productId === newProductId,
+        (cartItem) => cartItem.product.productId === newProductId,,
       );
 
       // Item already exists in cart
@@ -54,7 +54,7 @@ const cartSlice = createSlice({
 
     removeItemFromCart: (state, action: PayloadAction<string>) => {
       state.cart = state.cart.filter(
-        (cart) => cart.product.productId !== action.payload,
+        (cart) => cart.product.productId !== action.payload
       );
     },
   },

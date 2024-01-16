@@ -16,6 +16,7 @@ export default function ProductDetail({ product }: IProductDetailProps) {
   const [quantity, setQuantity] = useState<number>(1);
 
   const dispatch = useDispatch<AppDispatch>();
+  const handleAddToCart = () => dispatch(addCartItem({ product, quantity }));
 
   return (
     <S.ProductDetail>
@@ -29,8 +30,7 @@ export default function ProductDetail({ product }: IProductDetailProps) {
         <QuantityInput quantity={quantity} onSetQuantity={setQuantity} />
         <S.Splitter />
         <S.Price>{price}$</S.Price>
-        <S.AddToCartBtn
-          onClick={() => dispatch(addCartItem({ product, quantity }))}>
+        <S.AddToCartBtn onClick={handleAddToCart}>
           <i className="bi bi-cart-fill"></i> Add to cart
         </S.AddToCartBtn>
       </S.ButtonRow>

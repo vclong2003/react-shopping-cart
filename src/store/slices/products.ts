@@ -30,7 +30,7 @@ const productSlice = createSlice({
   name,
   initialState,
   reducers: {
-    selectProduct: (state, action: PayloadAction<IProduct>) => {
+    selectProduct: (state, action: PayloadAction<IProduct | null>) => {
       state.selectedProduct = action.payload;
     },
   },
