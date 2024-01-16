@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from "../../../components/Button/Button";
+import { DEVICES } from "../../../config/responsiveBreakpoints";
 
 const ProductDetail = styled.div`
   display: flex;
@@ -21,8 +22,13 @@ const Image = styled.img`
 `;
 
 const Name = styled.div`
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-xl);
   font-weight: var(--fw-medium);
+
+  @media ${DEVICES.TABLET} {
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-medium);
+  }
 `;
 
 const Description = styled.div`
@@ -32,9 +38,16 @@ const Description = styled.div`
 
 const ButtonRow = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
+  gap: var(--s-2);
+  align-items: flex-start;
+
+  @media ${DEVICES.TABLET} {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const Splitter = styled.div`
@@ -42,9 +55,15 @@ const Splitter = styled.div`
 `;
 
 const Price = styled.div`
-  margin: 0 var(--s-4);
+  margin: 0 var(--s-2);
   font-weight: var(--fw-bold);
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-xl);
+
+  @media ${DEVICES.TABLET} {
+    margin: 0 var(--s-4);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-2xl);
+  }
 `;
 
 const AddToCartBtn = styled(Button)`
