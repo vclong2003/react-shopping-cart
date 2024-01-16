@@ -37,7 +37,8 @@ const Summary = (): JSX.Element => {
           onClick={() => {
             dispatch(
               setNotification({
-                message: "test",
+                message:
+                  "thákd asdla dla nsdj asnd jask jd nasd asmdn ajk ạd ádj ádj  ",
                 type: ENotificationType.Success,
               }),
             );
