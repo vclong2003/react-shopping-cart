@@ -29,12 +29,15 @@ export const SummaryItem = styled.div`
 
 export const TotalLabel = styled.h1`
   margin-top: var(--s-4);
-  font-weight: bold;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-2xl);
 `;
 
-export const TotalAmount = styled.h1`
+export const TotalAmount = styled.div`
   margin-top: var(--s-4);
   color: var(--black);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
 `;
 
 export const CheckoutButton = styled(Button)`
