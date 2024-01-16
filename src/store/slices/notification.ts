@@ -5,12 +5,12 @@ interface INotificationState {
   notification: INotification | null;
 }
 
-const name = "notifications";
+const name = "notification";
 const initialState: INotificationState = {
   notification: null,
 };
 
-const notificationsSlice = createSlice({
+const notification = createSlice({
   name,
   initialState,
   reducers: {
@@ -23,6 +23,5 @@ const notificationsSlice = createSlice({
   },
 });
 
-export const { setNotification, clearNotification } =
-  notificationsSlice.actions;
-export default notificationsSlice.reducer;
+export const { setNotification, clearNotification } = notification.actions;
+export default notification;

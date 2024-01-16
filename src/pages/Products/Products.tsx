@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { useEffect } from "react";
-import { fetchAllProducts, selectProduct } from "../../store/slices/products";
+import { fetchAllProducts, selectProduct } from "../../store/slices/product";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import ProductList from "./ProductList/ProductList";
 import * as S from "./Products.styled";
