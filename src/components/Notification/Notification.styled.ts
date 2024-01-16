@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import { DEVICES } from "../../config/responsiveBreakpoints";
+import { ENotificationType } from "../../enum";
+import { getNotificationBg } from "../../utils/notification.utils";
 
 interface INotificationContainerProps {
   $show?: boolean;
+  $type?: ENotificationType;
 }
 
 export const NotificationContainer = styled.div<INotificationContainerProps>`
   display: ${({ $show }) => ($show ? "flex" : "none")};
-  background-color: var(--green);
+  background-color: ${({ $type }) => getNotificationBg($type)};
   box-shadow: var(--shadow-md);
   color: var(--white);
   padding: var(--s-3);
