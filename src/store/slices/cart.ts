@@ -51,19 +51,15 @@ const cartSlice = createSlice({
 
       state.cart[existingCartItemIndex].quantity = newQuantity;
     },
-    
+
     removeItemFromCart: (state, action: PayloadAction<string>) => {
-      state.cart = state.cart.filter((cart) => cart.product.productId !== action.payload);
+      state.cart = state.cart.filter(
+        (cart) => cart.product.productId !== action.payload
+      );
     },
-    
   },
 });
 
-
-
- 
-
-
-
-export const { addCartItem, changeItemQuantity,  removeItemFromCart  } = cartSlice.actions;
+export const { addCartItem, changeItemQuantity, removeItemFromCart } =
+  cartSlice.actions;
 export default cartSlice;
