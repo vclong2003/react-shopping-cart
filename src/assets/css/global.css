@@ -18,6 +18,7 @@
   --blue: #3b82f6;
   --white: #ffffff;
   --black: #000000;
+  --black-opacity: #00000057;
   --gray: #6b7280;
   --gray-light: #e5e7eb;
   --gray-light-1: #e6e7eb;
@@ -74,17 +75,3 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
-
-/*
-Order of properties should be:
-
-1. Positioning: position, top, right, bottom, left, z-index
-2. Box model: display, box-sizing, width, height, margin, padding, border
-3. Typography: font, line-height, text-align, text-transform, color
-4. Visual: background, color, opacity
-5. Layout: float, clear, flex, grid
-6. Decoration: border-radius, box-shadow
-7. Transforms and Transitions: transform, transition
-8. Miscellaneous: cursor, overflow, visibility
-*/
-
