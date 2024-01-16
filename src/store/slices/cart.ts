@@ -51,19 +51,23 @@ const cartSlice = createSlice({
 
       state.cart[existingCartItemIndex].quantity = newQuantity;
     },
-    
+
     removeItemFromCart: (state, action: PayloadAction<string>) => {
-      state.cart = state.cart.filter((cart) => cart.product.productId !== action.payload);
+      state.cart = state.cart.filter(
+        (cart) => cart.product.productId !== action.payload
+      );
     },
-    
+
+    showNotification: (state, action: PayloadAction<{ message: string }>) => {
+      // Xử lý hành động
+    },
   },
 });
 
-
-
- 
-
-
-
-export const { addCartItem, changeItemQuantity,  removeItemFromCart  } = cartSlice.actions;
+export const {
+  addCartItem,
+  changeItemQuantity,
+  removeItemFromCart,
+  showNotification,
+} = cartSlice.actions;
 export default cartSlice;
