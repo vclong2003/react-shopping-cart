@@ -2,8 +2,8 @@ import React from "react";
 import { JSX } from "react/jsx-runtime";
 import * as S from "./Popup.styled";
 
-interface IPopupProps {
-  children: JSX.Element | JSX.Element[] | string;
+interface IPopupProps extends JSX.IntrinsicAttributes {
+  children: JSX.Element | JSX.Element[] | string | null | undefined;
   show?: boolean;
   onClose: () => void;
 }
@@ -12,6 +12,7 @@ export default function Popup({
   children,
   show,
   onClose,
+  ...rest
 }: IPopupProps): JSX.Element {
   const handleClickContent = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -20,7 +21,7 @@ export default function Popup({
   };
 
   return (
-    <S.PopupOverlay $show={show} onClick={onClose}>
+    <S.PopupOverlay $show={show} onClick={onClose} {...rest}>
       <S.PopupContainer onClick={handleClickContent}>
         <S.PopupHeader>
           <S.CloseButton onClick={onClose}>

@@ -23,14 +23,14 @@ const fetchAllProducts = createAsyncThunk(
   async () => {
     const response = await axiosInstance.get(API_ENDPOINTS.PRODUCTS);
     return response.data;
-  }
+  },
 );
 
 const productSlice = createSlice({
   name,
   initialState,
   reducers: {
-    selectProduct: (state, action: PayloadAction<IProduct>) => {
+    selectProduct: (state, action: PayloadAction<IProduct | null>) => {
       state.selectedProduct = action.payload;
     },
   },
