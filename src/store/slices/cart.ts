@@ -1,14 +1,14 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ICartItem } from "../../interfaces";
 
-interface ICartSlice {
+interface ICartState {
   cart: ICartItem[];
   loading: boolean;
   error: string | null;
 }
 
 const name = "cart";
-const initialState: ICartSlice = {
+const initialState: ICartState = {
   cart: [],
   loading: false,
   error: null,
@@ -26,7 +26,7 @@ const cartSlice = createSlice({
       } = newCartItem;
 
       const existingCartItemIndex = state.cart.findIndex(
-        (cartItem) => cartItem.product.productId === newProductId
+        (cartItem) => cartItem.product.productId === newProductId,
       );
 
       // Item already exists in cart
@@ -44,7 +44,7 @@ const cartSlice = createSlice({
       } = action.payload;
 
       const existingCartItemIndex = state.cart.findIndex(
-        (cartItem) => cartItem.product.productId === productId
+        (cartItem) => cartItem.product.productId === productId,
       );
 
       if (existingCartItemIndex === -1) return;
@@ -54,7 +54,7 @@ const cartSlice = createSlice({
 
     removeItemFromCart: (state, action: PayloadAction<string>) => {
       state.cart = state.cart.filter(
-        (cart) => cart.product.productId !== action.payload
+        (cart) => cart.product.productId !== action.payload,
       );
     },
   },
