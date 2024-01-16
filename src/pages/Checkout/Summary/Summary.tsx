@@ -4,7 +4,7 @@ import * as S from "./Summary.styled";
 import useCartSummary from "../../../hooks/useCartSummary";
 import { useNavigate } from "react-router-dom";
 import { roundPrice } from "../../../utils/number.utils";
-import Notification from "../Notification/Notification";
+import Notification from "../../../components/Notification/Notification";
 
 const Summary = (): JSX.Element => {
   const { cart, totalPrice, shippingCost } = useCartSummary();
@@ -13,7 +13,7 @@ const Summary = (): JSX.Element => {
 
   const handleCheckout = () => {
     const confirmCheckout = window.confirm(
-      "Do you want to proceed with the payment?"
+      "Do you want to proceed with the payment?",
     );
 
     if (confirmCheckout) {
