@@ -4,7 +4,7 @@ import * as S from "./Summary.styled";
 import useCartSummary from "../../../hooks/useCartSummary";
 import { useNavigate } from "react-router-dom";
 import { roundPrice } from "../../../utils/number.utils";
-import Notification from "../Notification/Notification";
+import Notification from "../../../components/Notification/Notification";
 
 const Summary = (): JSX.Element => {
   const { cart, totalPrice, shippingCost } = useCartSummary();
