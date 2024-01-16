@@ -1,14 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-import cart from "./slices/cart";
-import notification from "./slices/notification";
-import product from "./slices/product";
+import productState from "./slices/product";
+import cartState from "./slices/cart";
+import notificationState from "./slices/notification";
 
 const store = configureStore({
   reducer: {
-    [product.name]: product.reducer,
-    [cart.name]: cart.reducer,
-    [notification.name]: notification.reducer,
+    [productState.name]: productState.reducer,
+    [cartState.name]: cartState.reducer,
+    [notificationState.name]: notificationState.reducer,
   },
 });
 

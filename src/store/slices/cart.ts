@@ -1,5 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ICartItem } from "../../interfaces";
+// import { axiosInstance } from "../../lib/axios";
+// import { API_ENDPOINTS } from "../../config/api";
+// import { RootState } from "..";
 
 interface ICartState {
   cart: ICartItem[];
@@ -14,7 +17,15 @@ const initialState: ICartState = {
   error: null,
 };
 
-const cart = createSlice({
+// const checkout = createAsyncThunk(
+//   `${name}/checkout`,
+//   async (_, { getState, fulfillWithValue, rejectWithValue }) => {
+//     const { cart:  } = getState() as RootState;
+//     const response = await axiosInstance.post(API_ENDPOINTS.CHECKOUT);
+//   },
+// );
+
+const cartState = createSlice({
   name,
   initialState,
   reducers: {
@@ -61,5 +72,5 @@ const cart = createSlice({
 });
 
 export const { addCartItem, changeItemQuantity, removeItemFromCart } =
-  cart.actions;
-export default cart;
+  cartState.actions;
+export default cartState;

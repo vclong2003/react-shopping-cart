@@ -10,7 +10,7 @@ const initialState: INotificationState = {
   notification: null,
 };
 
-const notification = createSlice({
+const notificationState = createSlice({
   name,
   initialState,
   reducers: {
@@ -23,5 +23,5 @@ const notification = createSlice({
   },
 });
 
-export const { setNotification, clearNotification } = notification.actions;
-export default notification;
+export const { setNotification, clearNotification } = notificationState.actions;
+export default notificationState;
