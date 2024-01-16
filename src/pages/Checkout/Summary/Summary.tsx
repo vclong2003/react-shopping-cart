@@ -1,29 +1,17 @@
-// Summary.tsx
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./Summary.styled";
 import useCartSummary from "../../../hooks/useCartSummary";
 import { useNavigate } from "react-router-dom";
 import { roundPrice } from "../../../utils/number.utils";
-import Notification from "../../../components/Notification/Notification";
+import { AppDispatch } from "../../../store";
+import { useDispatch } from "react-redux";
+import { setNotification } from "../../../store/slices/notification";
+import { ENotificationType } from "../../../enum";
 
 const Summary = (): JSX.Element => {
   const { cart, totalPrice, shippingCost } = useCartSummary();
   const navigate = useNavigate();
-  const [showNotification, setShowNotification] = useState(false);
-
-  const handleCheckout = () => {
-    const confirmCheckout = window.confirm(
-      "Do you want to proceed with the payment?",
-    );
-
-    if (confirmCheckout) {
-      setShowNotification(true);
-    }
-  };
-
-  const closeNotification = () => {
-    setShowNotification(false);
-  };
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <S.Summary>
@@ -44,20 +32,23 @@ const Summary = (): JSX.Element => {
           </S.TotalAmount>
         </S.SummaryItem>
 
-        <S.CheckoutButton disabled={cart.length === 0} onClick={handleCheckout}>
+        <S.CheckoutButton
+          disabled={cart.length === 0}
+          onClick={() => {
+            dispatch(
+              setNotification({
+                message: "test",
+                type: ENotificationType.Success,
+              }),
+            );
+          }}
+        >
           Checkout
         </S.CheckoutButton>
         <S.ContinueButton onClick={() => navigate("/products")}>
           Continue shopping
         </S.ContinueButton>
       </S.SummaryContainer>
-
-      {showNotification && (
-        <Notification
-          message="Payment successful. Thank you for your purchase!"
-          onClose={closeNotification}
-        />
-      )}
     </S.Summary>
   );
 };

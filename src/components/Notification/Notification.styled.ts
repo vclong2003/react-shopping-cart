@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const NotificationContainer = styled.div`
+interface INotificationContainerProps {
+  $show?: boolean;
+}
+
+export const NotificationContainer = styled.div<INotificationContainerProps>`
+  display: ${({ $show }) => ($show ? "flex" : "none")};
   background-color: var(--green);
   color: var(--white);
   padding: var(--s-3);
@@ -12,11 +17,3 @@ export const NotificationContainer = styled.div`
 `;
 
 export const Message = styled.p``;
-
-export const CloseButton = styled.button`
-  background-color: transparent;
-  color: var(--white);
-  margin-bottom: var(--s-2);
-  cursor: pointer;
-  float: right;
-`;

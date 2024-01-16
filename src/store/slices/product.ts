@@ -26,7 +26,7 @@ const fetchAllProducts = createAsyncThunk(
   },
 );
 
-const productSlice = createSlice({
+const product = createSlice({
   name,
   initialState,
   reducers: {
@@ -45,6 +45,6 @@ const productSlice = createSlice({
   },
 });
 
-export const { selectProduct } = productSlice.actions;
-export default productSlice;
+export const { selectProduct } = product.actions;
+export default product;
 export { fetchAllProducts };
