@@ -43,7 +43,6 @@ const ButtonRow = styled.div`
   align-items: flex-start;
 
   @media ${DEVICES.TABLET} {
-    display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
