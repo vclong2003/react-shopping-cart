@@ -8,6 +8,7 @@ interface INotificationContainerProps {
 export const NotificationContainer = styled.div<INotificationContainerProps>`
   display: ${({ $show }) => ($show ? "flex" : "none")};
   background-color: var(--green);
+  box-shadow: var(--shadow-md);
   color: var(--white);
   padding: var(--s-3);
   margin: var(--s-3);
