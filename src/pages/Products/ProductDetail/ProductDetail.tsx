@@ -6,6 +6,8 @@ import QuantityInput from "../../../components/QuanityInput/QuantityInput";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
 import { addCartItem } from "../../../store/slices/cart";
+import { setNotification } from "../../../store/slices/notification";
+import { ENotificationType } from "../../../enum";
 
 interface IProductDetailProps {
   product: IProduct;
@@ -16,7 +18,15 @@ export default function ProductDetail({ product }: IProductDetailProps) {
   const [quantity, setQuantity] = useState<number>(1);
 
   const dispatch = useDispatch<AppDispatch>();
-  const handleAddToCart = () => dispatch(addCartItem({ product, quantity }));
+  const handleAddToCart = () => {
+    dispatch(addCartItem({ product, quantity }));
+    dispatch(
+      setNotification({
+        message: "Product added to your cart! 😍",
+        type: ENotificationType.Success,
+      }),
+    );
+  };
 
   return (
     <S.ProductDetail>
