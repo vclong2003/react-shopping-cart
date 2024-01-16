@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Container from "../../components/Container/Container";
 import { DEVICES } from "../../config/responsiveBreakpoints";
+import Popup from "../../components/Popup/Popup";
 
 const ProductPage = styled.div`
   padding-top: var(--s-6);
@@ -12,6 +13,12 @@ const PageContent = styled(Container)`
   display: flex;
   flex-direction: row;
   gap: var(--s-4);
+`;
+
+const ProductDetailPopup = styled(Popup)`
+  @media ${DEVICES.TABLET} {
+    visibility: hidden;
+  }
 `;
 
 const Left = styled.div`
@@ -30,4 +37,4 @@ const Right = styled.div`
   }
 `;
 
-export { ProductPage, PageContent, Left, Right };
+export { ProductPage, PageContent, Left, Right, ProductDetailPopup };
