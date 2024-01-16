@@ -3,7 +3,7 @@ import { IProduct } from "../../interfaces";
 import { axiosInstance } from "../../lib/axios";
 import { API_ENDPOINTS } from "../../config/api";
 
-export interface IProductSlice {
+export interface IProductState {
   products: IProduct[];
   selectedProduct: IProduct | null;
   loading: boolean;
@@ -11,7 +11,7 @@ export interface IProductSlice {
 }
 
 const name = "products";
-const initialState: IProductSlice = {
+const initialState: IProductState = {
   products: [],
   selectedProduct: null,
   loading: false,

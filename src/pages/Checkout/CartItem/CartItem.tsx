@@ -4,9 +4,11 @@ import QuantityInput from "../../../components/QuanityInput/QuantityInput";
 import * as S from "./CartItem.styled";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
-import { changeItemQuantity, removeItemFromCart} from "../../../store/slices/cart";
+import {
+  changeItemQuantity,
+  removeItemFromCart,
+} from "../../../store/slices/cart";
 import { roundPrice } from "../../../utils/number.utils";
-
 
 interface ICartItemProps {
   cartItem: ICartItem;
@@ -31,7 +33,9 @@ export default function CartItem({ cartItem }: ICartItemProps) {
         <S.ProductImage src={imageUrl} alt="" />
       </S.Left>
       <S.Right>
-        <S.ButtonRemove  onClick={handleRemoveFromCart}><i className="bi bi-trash" style={{color:"red"}}></i></S.ButtonRemove>
+        <S.ButtonRemove onClick={handleRemoveFromCart}>
+          <i className="bi bi-trash2-fill" />
+        </S.ButtonRemove>
         <S.ProductDetails>
           <S.ProductName>{productName}</S.ProductName>
           <S.DetailDescription>{description}</S.DetailDescription>

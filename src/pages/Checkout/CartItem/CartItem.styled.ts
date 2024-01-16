@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../../../components/Button/Button";
 
 export const CartItemContainer = styled.div`
   display: flex;
@@ -54,11 +55,12 @@ export const Right = styled.div`
 `;
 export const Prices = styled.h1``;
 
-
-export const ButtonRemove = styled.button`
+export const ButtonRemove = styled(Button)`
   background: none;
   display: flex;
   flex-direction: row-reverse;
   cursor: pointer;
-  
+  padding: 0;
+  color: var(--red);
+  font-size: var(--fs-xl);
 `;

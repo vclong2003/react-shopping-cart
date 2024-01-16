@@ -1,14 +1,14 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ICartItem } from "../../interfaces";
 
-interface ICartSlice {
+interface ICartState {
   cart: ICartItem[];
   loading: boolean;
   error: string | null;
 }
 
 const name = "cart";
-const initialState: ICartSlice = {
+const initialState: ICartState = {
   cart: [],
   loading: false,
   error: null,
@@ -54,7 +54,7 @@ const cartSlice = createSlice({
 
     removeItemFromCart: (state, action: PayloadAction<string>) => {
       state.cart = state.cart.filter(
-        (cartItem) => cartItem.product.productId !== action.payload,
+        (cart) => cart.product.productId !== action.payload,
       );
     },
   },
