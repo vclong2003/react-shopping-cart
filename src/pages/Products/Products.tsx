@@ -9,7 +9,9 @@ import * as S from "./Products.styled";
 
 export default function Products(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
-  const { selectedProduct } = useSelector((state: RootState) => state.products);
+  const { selectedProduct } = useSelector(
+    (state: RootState) => state.productState,
+  );
 
   useEffect(() => {
     dispatch(fetchAllProducts());

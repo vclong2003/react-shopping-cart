@@ -12,7 +12,7 @@ export default function Header(): JSX.Element {
   const openOffcanvas = () => setIsOffCanvasVisible(true);
   const closeOffCanvas = () => setIsOffCanvasVisible(false);
 
-  const { cart } = useSelector((state: RootState) => state.cart);
+  const { cart } = useSelector((state: RootState) => state.cartState);
 
   return (
     <S.Header>

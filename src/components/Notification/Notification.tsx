@@ -7,7 +7,7 @@ import { clearNotification } from "../../store/slices/notification";
 const Notification = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { notification } = useSelector(
-    (state: RootState) => state.notification,
+    (state: RootState) => state.notificationState,
   );
 
   const { message, type } = notification || {};
