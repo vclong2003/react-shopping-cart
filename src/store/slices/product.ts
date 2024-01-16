@@ -10,7 +10,7 @@ export interface IProductState {
   error: string | null;
 }
 
-const name = "products";
+const name = "productState";
 const initialState: IProductState = {
   products: [],
   selectedProduct: null,

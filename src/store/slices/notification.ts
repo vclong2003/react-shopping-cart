@@ -5,7 +5,7 @@ interface INotificationState {
   notification: INotification | null;
 }
 
-const name = "notification";
+const name = "notificationState";
 const initialState: INotificationState = {
   notification: null,
 };

@@ -10,7 +10,7 @@ interface ICartState {
   error: string | null;
 }
 
-const name = "cart";
+const name = "cartState";
 const initialState: ICartState = {
   cart: [],
   loading: false,
