@@ -51,9 +51,11 @@ from,
     }
 `;
 
-const LoadingAnimation = styled.div`
+const LoadingOverlay = styled.div`
   position: fixed;
+  left: 0;
   top: 0;
+  z-index: 1000;
   background-color: var(--black-opacity);
   width: 100vw;
   height: 100vh;
@@ -132,7 +134,7 @@ const CartTrack = styled.g`
 `;
 
 export {
-  LoadingAnimation,
+  LoadingOverlay,
   PreLoader,
   Cart,
   CartLines,

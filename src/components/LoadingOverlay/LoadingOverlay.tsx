@@ -1,9 +1,9 @@
 import React from "react";
 import * as S from "./LoadingAnimation.styled";
 
-export default function LoadingAnimation() {
+export default function LoadingOverlay() {
   return (
-    <S.LoadingAnimation>
+    <S.LoadingOverlay>
       <S.PreLoader>
         <S.Cart
           role="img"
@@ -50,6 +50,6 @@ export default function LoadingAnimation() {
           </g>
         </S.Cart>
       </S.PreLoader>
-    </S.LoadingAnimation>
+    </S.LoadingOverlay>
   );
 }
