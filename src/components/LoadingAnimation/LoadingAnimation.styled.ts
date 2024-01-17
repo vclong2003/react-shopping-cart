@@ -55,7 +55,6 @@ const LoadingAnimation = styled.div`
   position: fixed;
   top: 0;
   background-color: var(--black-opacity);
-  color: var(--fg);
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -77,7 +76,7 @@ const Cart = styled.svg`
 
 const CartLines = styled.g`
   animation: ${Cart_Lines} 2s ease-in-out infinite;
-  stroke: var(--primary);
+  stroke: var(--white);
 `;
 
 interface ICartTop {
