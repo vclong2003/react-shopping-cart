@@ -8,7 +8,7 @@ on:
       - prod
 
 jobs:
-  build_and_deploy_prod:
+  firebase_deploy_production:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
