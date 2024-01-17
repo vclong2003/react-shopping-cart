@@ -26,14 +26,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:dev": "react-scripts build",
-    "build:prod": "env-cmd -f .env.production npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "start": "env-cmd -f .env.development react-scripts start",
+    "start:prod": "env-cmd -f .env.production react-scripts start",
     "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix"
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "build:dev": "react-scripts build",
+    "build:prod": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
