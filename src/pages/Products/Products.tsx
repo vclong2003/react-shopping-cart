@@ -6,11 +6,11 @@ import { fetchAllProducts, selectProduct } from "../../store/slices/product";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import ProductList from "./ProductList/ProductList";
 import * as S from "./Products.styled";
-import PageLoader from "../../components/PageLoader/PageLoader";
+import LoadingOverlay from "../../components/LoadingOverlay/LoadingOverlay";
 
 export default function Products(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
-  const { selectedProduct } = useSelector(
+  const { selectedProduct, loading } = useSelector(
     (state: RootState) => state.productState,
   );
 
@@ -24,7 +24,7 @@ export default function Products(): JSX.Element {
 
   return (
     <S.ProductPage>
-      <PageLoader />
+      {loading && <LoadingOverlay />}
       <S.ProductDetailPopup
         show={selectedProduct !== null}
         onClose={handleClosePopup}
