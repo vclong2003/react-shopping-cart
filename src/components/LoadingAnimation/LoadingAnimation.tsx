@@ -3,14 +3,12 @@ import * as S from "./LoadingAnimation.styled";
 
 export default function LoadingAnimation() {
   return (
-    <S.Loader>
+    <S.LoadingAnimation>
       <S.PreLoader>
         <S.Cart
           role="img"
           aria-label="Shopping cart line animation"
           viewBox="0 0 128 128"
-          width="128px"
-          height="128px"
           xmlns="http://www.w3.org/2000/svg"
         >
           <g
@@ -27,16 +25,16 @@ export default function LoadingAnimation() {
             <S.CartLines stroke="currentColor">
               <S.CartTop
                 points="4,4 21,4 26,22 124,22 112,64 35,64 39,80 106,80"
-                stroke-dasharray="338 338"
-                stroke-dashoffset="-338"
+                $strokeDasharray="338 338"
+                $strokeDashoffset="-338"
               />
               <S.CartWheel1 transform="rotate(-90,43,111)">
                 <S.CartWheelStroke
                   cx="43"
                   cy="111"
                   r="13"
-                  stroke-dasharray="81.68 81.68"
-                  stroke-dashoffset="81.68"
+                  $strokeDasharray="81.68 81.68"
+                  $strokeDashoffset="81.68"
                 />
               </S.CartWheel1>
               <S.CartWheel2 transform="rotate(90,102,111)">
@@ -44,14 +42,14 @@ export default function LoadingAnimation() {
                   cx="102"
                   cy="111"
                   r="13"
-                  stroke-dasharray="81.68 81.68"
-                  stroke-dashoffset="81.68"
+                  $strokeDasharray="81.68 81.68"
+                  $strokeDashoffset="81.68"
                 />
               </S.CartWheel2>
             </S.CartLines>
           </g>
         </S.Cart>
       </S.PreLoader>
-    </S.Loader>
+    </S.LoadingAnimation>
   );
 }

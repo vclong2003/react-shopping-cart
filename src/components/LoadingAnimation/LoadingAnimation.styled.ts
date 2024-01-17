@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import Container from "../Container/Container";
 
 const Cart_Lines = keyframes`
 from,
@@ -52,11 +51,12 @@ from,
     }
 `;
 
-const Loader = styled(Container)`
+const LoadingAnimation = styled.div`
   position: fixed;
   top: 0;
   background-color: var(--black-opacity);
   color: var(--fg);
+  width: 100vw;
   height: 100vh;
   display: grid;
   place-items: center;
@@ -80,7 +80,16 @@ const CartLines = styled.g`
   stroke: var(--primary);
 `;
 
-const CartTop = styled.polyline`
+interface ICartTop {
+  points: string;
+  $strokeDasharray: string;
+  $strokeDashoffset: string;
+}
+const CartTop = styled.polyline.attrs<ICartTop>((props) => ({
+  points: props.points,
+  strokeDasharray: props.$strokeDasharray,
+  strokeDashoffset: props.$strokeDashoffset,
+}))`
   animation: ${Cart_Lines} 2s ease-in-out infinite;
   animation-name: ${Cart_Top};
 `;
@@ -99,7 +108,21 @@ const CartWheel2 = styled.g`
   transform-origin: 102px 111px;
 `;
 
-const CartWheelStroke = styled.circle`
+interface ICartWheelStroke {
+  cx: string;
+  cy: string;
+  r: string;
+  $strokeDasharray: string;
+  $strokeDashoffset: string;
+}
+
+const CartWheelStroke = styled.circle.attrs<ICartWheelStroke>((props) => ({
+  cx: props.cx,
+  cy: props.cy,
+  r: props.r,
+  strokeDasharray: props.$strokeDasharray,
+  strokeDashoffset: props.$strokeDashoffset,
+}))`
   animation: ${Cart_Lines} 2s ease-in-out infinite;
   animation-name: ${Cart_Wheel_Stroke};
 `;
@@ -110,7 +133,7 @@ const CartTrack = styled.g`
 `;
 
 export {
-  Loader,
+  LoadingAnimation,
   PreLoader,
   Cart,
   CartLines,
