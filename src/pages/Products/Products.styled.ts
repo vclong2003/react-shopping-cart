@@ -7,6 +7,7 @@ const ProductPage = styled.div`
   padding-top: var(--s-6);
   padding-bottom: var(--s-6);
   background-color: var(--gray-light);
+  min-height: 100vh;
 `;
 
 const PageContent = styled(Container)`
