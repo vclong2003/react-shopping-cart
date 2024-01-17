@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IProduct } from "../../../interfaces";
 import * as S from "./ProductDetail.styled";
 import { useState } from "react";
@@ -27,6 +27,10 @@ export default function ProductDetail({ product }: IProductDetailProps) {
       }),
     );
   };
+
+  useEffect(() => {
+    setQuantity(1);
+  }, [product]);
 
   return (
     <S.ProductDetail>
