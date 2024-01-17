@@ -26,6 +26,7 @@ const Backdrop = styled.div`
   z-index: 10;
 `;
 
+// prettier-ignore
 const Overlay = styled.div<IOverlayProps>`
   position: fixed;
   top: 0;
