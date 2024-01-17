@@ -4,7 +4,7 @@ import Checkout from "../pages/Checkout/Checkout";
 import Home from "../pages/Home/Home";
 import Products from "../pages/Products/Products";
 import Review from "../pages/Reviews/Review";
-import LoadingAnimation from "../components/LoadingAnimation/LoadingAnimation";
+import LoadingAnimation from "../components/LoadingOverlay/LoadingOverlay";
 
 export const layoutRoutes: IRoute[] = [
   {
