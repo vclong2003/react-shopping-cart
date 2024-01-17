@@ -1,8 +1,8 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { ICartItem } from "../../interfaces";
-// import { axiosInstance } from "../../lib/axios";
-// import { API_ENDPOINTS } from "../../config/api";
-// import { RootState } from "..";
+import { axiosInstance } from "../../lib/axios";
+import { API_ENDPOINTS } from "../../config/api";
+import { RootState } from "..";
 
 interface ICartState {
   cart: ICartItem[];
@@ -17,13 +17,30 @@ const initialState: ICartState = {
   error: null,
 };
 
-// const checkout = createAsyncThunk(
-//   `${name}/checkout`,
-//   async (_, { getState, fulfillWithValue, rejectWithValue }) => {
-//     const { cart:  } = getState() as RootState;
-//     const response = await axiosInstance.post(API_ENDPOINTS.CHECKOUT);
-//   },
-// );
+const checkout = createAsyncThunk(
+  `${name}/checkout`,
+  async (_, { getState, fulfillWithValue, rejectWithValue }) => {
+    const {
+      cartState: { cart },
+    } = getState() as RootState;
+    if (cart.length === 0) return;
+
+    const cartData = cart.map((cartItem) => ({
+      productId: cartItem.product.productId,
+      quantity: cartItem.quantity,
+    }));
+
+    try {
+      const response = await axiosInstance.post(
+        API_ENDPOINTS.CHECKOUT,
+        cartData,
+      );
+      fulfillWithValue(response.data);
+    } catch (error) {
+      rejectWithValue(error);
+    }
+  },
+);
 
 const cartState = createSlice({
   name,
@@ -68,6 +85,19 @@ const cartState = createSlice({
         (cart) => cart.product.productId !== action.payload,
       );
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(checkout.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(checkout.fulfilled, (state) => {
+      state.loading = false;
+      state.cart = [];
+    });
+    builder.addCase(checkout.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message as string;
+    });
   },
 });
 
