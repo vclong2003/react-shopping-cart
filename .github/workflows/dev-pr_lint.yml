@@ -5,7 +5,7 @@ on:
     branches:
       - dev
 jobs:
-  lint_check_dev:
+  check_lint_dev:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
