@@ -1,7 +1,7 @@
 import React from "react";
-import * as S from "./PageLoader.styled";
+import * as S from "./LoadingAnimation.styled";
 
-export default function PageLoader() {
+export default function LoadingAnimation() {
   return (
     <S.Loader>
       <S.PreLoader>

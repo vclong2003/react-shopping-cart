@@ -6,7 +6,7 @@ import { fetchAllProducts, selectProduct } from "../../store/slices/product";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import ProductList from "./ProductList/ProductList";
 import * as S from "./Products.styled";
-import PageLoader from "../../components/PageLoader/PageLoader";
+import LoadingAnimation from "../../components/LoadingAnimation/LoadingAnimation";
 
 export default function Products(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
@@ -24,7 +24,7 @@ export default function Products(): JSX.Element {
 
   return (
     <S.ProductPage>
-      <PageLoader />
+      <LoadingAnimation />
       <S.ProductDetailPopup
         show={selectedProduct !== null}
         onClose={handleClosePopup}

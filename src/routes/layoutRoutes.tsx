@@ -4,7 +4,7 @@ import Checkout from "../pages/Checkout/Checkout";
 import Home from "../pages/Home/Home";
 import Products from "../pages/Products/Products";
 import Review from "../pages/Reviews/Review";
-import PageLoader from "../components/PageLoader/PageLoader";
+import LoadingAnimation from "../components/LoadingAnimation/LoadingAnimation";
 
 export const layoutRoutes: IRoute[] = [
   {
@@ -20,5 +20,5 @@ export const layoutRoutes: IRoute[] = [
     component: <Review />,
   },
   { path: "/checkout", component: <Checkout /> },
-  { path: "/buh", component: <PageLoader /> },
+  { path: "/buh", component: <LoadingAnimation /> },
 ];
