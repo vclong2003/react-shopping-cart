@@ -13,6 +13,18 @@ export interface ICartItem {
   quantity: number;
 }
 
+export interface ICartApiData {
+  paySuccess: boolean;
+  productsInOrder: {
+    productId: string;
+    quantity: number;
+  }[];
+}
+
+export interface ICartApiResponeData {
+  success: boolean;
+}
+
 export interface IRoute {
   path: string;
   component: JSX.Element;

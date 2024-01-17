@@ -8,6 +8,17 @@
   outline: none;
   margin: 0;
   padding: 0;
+
+  ::-webkit-scrollbar {
+    width: var(--s-2);
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--white);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gray-light-2);
+    border-radius: var(--br-md);
+  }
 }
 
 :root {
@@ -22,6 +33,7 @@
   --gray: #6b7280;
   --gray-light: #e5e7eb;
   --gray-light-1: #e6e7eb;
+  --gray-light-2: #d4d4d4;
   --gray-dark: #374151;
 
   /* Font sizes -------------------- */
