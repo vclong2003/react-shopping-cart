@@ -1,4 +1,4 @@
-name: Lint Dev
+name: Lint Stag
 on:
   pull_request:
     branches: ["stag"]
