@@ -1,13 +1,11 @@
-name: Lint Dev
+name: Lint Dev, Stag PRs
 on:
-  push:
-    branches:
-      - dev
   pull_request:
     branches:
       - dev
+      - stag
 jobs:
-  check_lint_dev:
+  check_lint_dev-stag:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
