@@ -1,13 +1,14 @@
 name: Lint Dev
 on:
+  push:
+    branches:
+      - dev
   pull_request:
-    branches: ["dev"]
+    branches:
+      - dev
 jobs:
-  lint_check_dev:
+  check_lint_dev:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -15,5 +16,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm i
-      - run: npm rum lint:fix
+      - run: npm i && npm rum lint:fix
