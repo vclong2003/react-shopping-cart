@@ -1,7 +1,9 @@
 name: Lint Dev
 on:
   pull_request:
-    branches: ["dev"]
+    branches:
+      - dev
+      - stag
 jobs:
   lint_check_dev:
     runs-on: ubuntu-latest
