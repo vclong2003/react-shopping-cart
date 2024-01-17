@@ -1,9 +1,9 @@
 name: Lint Dev
 on:
   pull_request:
-    branches: ["dev"]
+    branches: ["stag"]
 jobs:
-  lint_check_dev:
+  lint_check_stag:
     runs-on: ubuntu-latest
     strategy:
       matrix:
