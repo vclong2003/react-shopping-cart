@@ -1,5 +1,8 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ICartItem } from "../../interfaces";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { ICartApiData, ICartApiResponeData, ICartItem } from "../../interfaces";
+import { axiosInstance } from "../../lib/axios";
+import { API_ENDPOINTS } from "../../config/api";
+import { RootState } from "..";
 
 interface ICartState {
   cart: ICartItem[];
@@ -7,14 +10,38 @@ interface ICartState {
   error: string | null;
 }
 
-const name = "cart";
+const name = "cartState";
 const initialState: ICartState = {
   cart: [],
   loading: false,
   error: null,
 };
 
-const cart = createSlice({
+const checkout = createAsyncThunk(
+  `${name}/checkout`,
+  async (_, { getState }) => {
+    const {
+      cartState: { cart },
+    } = getState() as RootState;
+    if (cart.length === 0) return;
+
+    const cartApiData: ICartApiData = {
+      paySuccess: true,
+      productsInOrder: cart.map((cartItem) => ({
+        productId: cartItem.product.productId,
+        quantity: cartItem.quantity,
+      })),
+    };
+
+    const response = await axiosInstance.post(
+      API_ENDPOINTS.CHECKOUT,
+      cartApiData,
+    );
+    return response.data as ICartApiResponeData;
+  },
+);
+
+const cartState = createSlice({
   name,
   initialState,
   reducers: {
@@ -51,15 +78,36 @@ const cart = createSlice({
 
       state.cart[existingCartItemIndex].quantity = newQuantity;
     },
-
     removeItemFromCart: (state, action: PayloadAction<string>) => {
       state.cart = state.cart.filter(
         (cart) => cart.product.productId !== action.payload,
       );
     },
   },
+  extraReducers: (builder) => {
+    builder.addCase(checkout.pending, (state) => {
+      state.error = null;
+      state.loading = true;
+    });
+    builder.addCase(checkout.fulfilled, (state, action) => {
+      state.loading = false;
+      const { success } = action.payload || {};
+
+      if (success) {
+        state.cart = [];
+        return;
+      }
+
+      state.error = "Something went wrong";
+    });
+    builder.addCase(checkout.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message as string;
+    });
+  },
 });
 
 export const { addCartItem, changeItemQuantity, removeItemFromCart } =
-  cart.actions;
-export default cart;
+  cartState.actions;
+export { checkout };
+export default cartState;

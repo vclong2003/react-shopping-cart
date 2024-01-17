@@ -26,7 +26,7 @@ const PopupContainer = styled.div`
   max-height: 80%;
   margin: 0 var(--s-8);
   background-color: var(--white);
-  padding: var(--s-5);
+  padding: var(--s-4);
   border-radius: var(--br-md);
   box-shadow: var(--shadow-md);
   overflow: hidden;

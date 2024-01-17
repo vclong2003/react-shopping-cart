@@ -50,6 +50,7 @@ const NavList = styled(BaseNavList)`
 
 const VerticalNavList = styled(BaseNavList)`
   flex-direction: column;
+  align-items: flex-start;
   row-gap: var(--s-6);
   margin: var(--s-6) var(--s-10);
 `;

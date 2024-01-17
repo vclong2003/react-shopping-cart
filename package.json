@@ -15,6 +15,7 @@
     "axios": "^1.6.5",
     "bootstrap-icons": "^1.11.3",
     "dotenv": "^16.3.1",
+    "env-cmd": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.0.4",
@@ -25,13 +26,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build:dev": "react-scripts build",
-    "build:prod": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix"
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "start": "env-cmd -f .env.development react-scripts start",
+    "build:dev": "env-cmd -f .env.development react-scripts build",
+    "build:stag": "env-cmd -f .env.staging react-scripts build",
+    "build:prod": "env-cmd -f .env.production react-scripts build"
   },
   "eslintConfig": {
     "extends": [

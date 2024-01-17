@@ -10,7 +10,7 @@ export interface IProductState {
   error: string | null;
 }
 
-const name = "products";
+const name = "productState";
 const initialState: IProductState = {
   products: [],
   selectedProduct: null,
@@ -26,7 +26,7 @@ const fetchAllProducts = createAsyncThunk(
   },
 );
 
-const product = createSlice({
+const productState = createSlice({
   name,
   initialState,
   reducers: {
@@ -42,9 +42,13 @@ const product = createSlice({
       state.loading = false;
       state.products = action.payload;
     });
+    builder.addCase(fetchAllProducts.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message as string;
+    });
   },
 });
 
-export const { selectProduct } = product.actions;
-export default product;
+export const { selectProduct } = productState.actions;
 export { fetchAllProducts };
+export default productState;

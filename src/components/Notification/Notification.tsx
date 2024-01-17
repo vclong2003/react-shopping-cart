@@ -7,21 +7,25 @@ import { clearNotification } from "../../store/slices/notification";
 const Notification = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { notification } = useSelector(
-    (state: RootState) => state.notification,
+    (state: RootState) => state.notificationState,
   );
 
-  const { message } = notification || {};
+  const { message, type } = notification || {};
 
   useEffect(() => {
     if (!notification) return;
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       dispatch(clearNotification());
-    }, 3000);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [dispatch, notification]);
 
   return (
-    <S.NotificationContainer $show={notification !== null}>
+    <S.NotificationContainer $type={type} $show={notification !== null}>
       <S.Message>{message}</S.Message>
     </S.NotificationContainer>
   );

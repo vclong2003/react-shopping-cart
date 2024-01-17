@@ -5,7 +5,7 @@ import S from "./ProductList.styled";
 import { RootState } from "../../../store";
 
 export default function ProductList() {
-  const { products } = useSelector((state: RootState) => state.products);
+  const { products } = useSelector((state: RootState) => state.productState);
 
   return (
     <S.ProductList>

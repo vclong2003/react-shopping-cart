@@ -4,6 +4,7 @@ import Checkout from "../pages/Checkout/Checkout";
 import Home from "../pages/Home/Home";
 import Products from "../pages/Products/Products";
 import Review from "../pages/Reviews/Review";
+import LoadingAnimation from "../components/LoadingOverlay/LoadingOverlay";
 
 export const layoutRoutes: IRoute[] = [
   {
@@ -19,4 +20,5 @@ export const layoutRoutes: IRoute[] = [
     component: <Review />,
   },
   { path: "/checkout", component: <Checkout /> },
+  { path: "/buh", component: <LoadingAnimation /> },
 ];

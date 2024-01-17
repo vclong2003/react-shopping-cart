@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./Header.styled";
 import Badge from "../Badge/Badge";
 import OffCanvas from "../OffCanvas/OffCanvas";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { useLocation } from "react-router-dom";
 
 export default function Header(): JSX.Element {
-  const [isOffcanavsVisible, setIsOffCanvasVisible] = useState<boolean>(false);
+  const { cart } = useSelector((state: RootState) => state.cartState);
+  const location = useLocation();
 
+  const [isOffcanavsVisible, setIsOffCanvasVisible] = useState<boolean>(false);
   const openOffcanvas = () => setIsOffCanvasVisible(true);
   const closeOffCanvas = () => setIsOffCanvasVisible(false);
 
-  const { cart } = useSelector((state: RootState) => state.cart);
+  useEffect(() => {
+    closeOffCanvas();
+  }, [location]);
 
   return (
     <S.Header>
