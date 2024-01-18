@@ -1,13 +1,14 @@
-//Products.tsx
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store";
-import { useEffect } from "react";
-import { fetchAllProducts, selectProduct } from "../../store/slices/product";
+import React, { useEffect } from "react";
+import * as S from "./Products.styled";
+
 import ProductDetail from "./ProductDetail/ProductDetail";
 import ProductList from "./ProductList/ProductList";
-import * as S from "./Products.styled";
 import LoadingOverlay from "../../components/LoadingOverlay/LoadingOverlay";
+
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
+
+import { fetchAllProducts, selectProduct } from "../../store/slices/product";
 
 export default function Products(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();

@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
-import { IProduct } from "../../../interfaces";
+import React, { useEffect, useState } from "react";
 import * as S from "./ProductDetail.styled";
-import { useState } from "react";
+
 import QuantityInput from "../../../components/QuanityInput/QuantityInput";
-import { useDispatch } from "react-redux";
+
 import { AppDispatch } from "../../../store";
+import { ENotificationType } from "../../../enum";
+import { IProduct } from "../../../interfaces/product.interfaces";
+
+import { useDispatch } from "react-redux";
 import { addCartItem } from "../../../store/slices/cart";
 import { setNotification } from "../../../store/slices/notification";
-import { ENotificationType } from "../../../enum";
 
 interface IProductDetailProps {
   product: IProduct;

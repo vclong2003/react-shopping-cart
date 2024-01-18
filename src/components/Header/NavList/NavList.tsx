@@ -1,7 +1,7 @@
 import React from "react";
-import NavItem from "../NavItem/NavItem";
-
 import * as S from "./NavList.styled";
+
+import NavItem from "../NavItem/NavItem";
 
 const NAV_LINKS = [
   { name: "Home", path: "/" },

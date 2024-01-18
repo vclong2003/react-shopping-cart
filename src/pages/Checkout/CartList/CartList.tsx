@@ -1,8 +1,10 @@
 import React from "react";
-import CartItem from "../CartItem/CartItem";
 import * as S from "./CartList.styled";
-import { useSelector } from "react-redux";
+
+import CartItem from "../CartItem/CartItem";
+
 import { RootState } from "../../../store";
+import { useSelector } from "react-redux";
 
 export default function CartList() {
   const { cart } = useSelector((state: RootState) => state.cartState);
