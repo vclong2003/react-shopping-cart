@@ -4,11 +4,25 @@ import useCartSummary from "../../../hooks/useCartSummary";
 import { useNavigate } from "react-router-dom";
 import { roundPrice } from "../../../utils/number.utils";
 import LoadingOverlay from "../../../components/LoadingOverlay/LoadingOverlay";
+import { setNotification } from "../../../store/slices/notification";
+import { ENotificationType } from "../../../enum";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../store";
 
 const Summary = (): JSX.Element => {
   const { cart, totalPrice, shippingCost, onCheckout, loading } =
     useCartSummary();
   const navigate = useNavigate();
+
+  const dispatch = useDispatch<AppDispatch>();
+  const notification = () => {
+    dispatch(
+      setNotification({
+        message: " 👏 Thank you for your purchased!!",
+        type: ENotificationType.Success,
+      }),
+    );
+  };
 
   return (
     <S.Summary>
@@ -30,7 +44,13 @@ const Summary = (): JSX.Element => {
           </S.TotalAmount>
         </S.SummaryItem>
 
-        <S.CheckoutButton disabled={cart.length === 0} onClick={onCheckout}>
+        <S.CheckoutButton
+          disabled={cart.length === 0}
+          onClick={() => {
+            onCheckout();
+            notification();
+          }}
+        >
           Checkout
         </S.CheckoutButton>
         <S.ContinueButton onClick={() => navigate("/products")}>
