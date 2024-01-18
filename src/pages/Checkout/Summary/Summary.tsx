@@ -4,24 +4,22 @@ import useCartSummary from "../../../hooks/useCartSummary";
 import { useNavigate } from "react-router-dom";
 import { roundPrice } from "../../../utils/number.utils";
 import LoadingOverlay from "../../../components/LoadingOverlay/LoadingOverlay";
-import { setNotification } from "../../../store/slices/notification";
-import { ENotificationType } from "../../../enum";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../store";
+import { useState } from "react";
+import Popup from "../../../components/Popup/Popup";
 
 const Summary = (): JSX.Element => {
   const { cart, totalPrice, shippingCost, onCheckout, loading } =
     useCartSummary();
   const navigate = useNavigate();
 
-  const dispatch = useDispatch<AppDispatch>();
-  const notification = () => {
-    dispatch(
-      setNotification({
-        message: " 👏 Thank you for your purchased!!",
-        type: ENotificationType.Success,
-      }),
-    );
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleCheckout = () => {
+    setShowPopup(true);
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -47,8 +45,7 @@ const Summary = (): JSX.Element => {
         <S.CheckoutButton
           disabled={cart.length === 0}
           onClick={() => {
-            onCheckout();
-            notification();
+            handleCheckout();
           }}
         >
           Checkout
@@ -57,6 +54,23 @@ const Summary = (): JSX.Element => {
           Continue shopping
         </S.ContinueButton>
       </S.SummaryContainer>
+
+      {showPopup && (
+        <Popup show={showPopup} onClose={handlePopupClose}>
+          <S.PopupContent>
+            <S.TextContent>Do you want to purcharese 🤔?</S.TextContent>
+            <S.BtnCheckout
+              onClick={() => {
+                onCheckout();
+                handlePopupClose();
+              }}
+            >
+              Yes
+            </S.BtnCheckout>
+            <S.BtnCheckout onClick={handlePopupClose}>No</S.BtnCheckout>
+          </S.PopupContent>
+        </Popup>
+      )}
     </S.Summary>
   );
 };
