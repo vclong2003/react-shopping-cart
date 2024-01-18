@@ -1,9 +1,11 @@
 import React from "react";
-import { IProduct } from "../../../interfaces";
 import S from "./ProductItem.styled";
+
+import { AppDispatch } from "../../../store";
+import { IProduct } from "../../../interfaces/product.interfaces";
+
 import { useDispatch } from "react-redux";
 import { selectProduct } from "../../../store/slices/product";
-import { AppDispatch } from "../../../store";
 
 interface IProductItemProps {
   product: IProduct;

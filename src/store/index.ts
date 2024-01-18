@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import productState from "./slices/product";
 import cartState from "./slices/cart";
 import notificationState from "./slices/notification";

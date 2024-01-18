@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import * as S from "./Notification.styled";
+
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { clearNotification } from "../../store/slices/notification";
@@ -17,7 +18,7 @@ const Notification = () => {
 
     const timer = setTimeout(() => {
       dispatch(clearNotification());
-    }, 2000);
+    }, 2500);
 
     return () => {
       clearTimeout(timer);

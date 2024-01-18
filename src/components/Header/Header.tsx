@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./Header.styled";
+
 import Badge from "../Badge/Badge";
 import OffCanvas from "../OffCanvas/OffCanvas";
-import { useState } from "react";
+
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { useLocation } from "react-router-dom";

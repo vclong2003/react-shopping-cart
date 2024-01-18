@@ -1,10 +1,10 @@
-
 import React from "react";
-import CartList from "./CartList/CartList";
-import Summary from "./Summary/Summary";
 import * as S from "./Checkout.styled";
 
-const Checkout: React.FC = () => {
+import CartList from "./CartList/CartList";
+import Summary from "./Summary/Summary";
+
+const Checkout = (): JSX.Element => {
   return (
     <S.Checkout>
       <S.CheckoutContainer>

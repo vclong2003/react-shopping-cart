@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "../store";
 
 import "../assets/css/global.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 import Notification from "../components/Notification/Notification";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import store from "../store";
 import { APP_TITLE } from "../config/appTitle";
 
 interface IAppProviderProps {

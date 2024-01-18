@@ -1,28 +1,35 @@
+import {
+  IProduct,
+  IProductState,
+  TProductsApiResponeData,
+} from "../../interfaces/product.interfaces";
+
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IProduct } from "../../interfaces";
+import { setNotification } from "./notification";
+
 import { axiosInstance } from "../../lib/axios";
 import { API_ENDPOINTS } from "../../config/api";
-
-export interface IProductState {
-  products: IProduct[];
-  selectedProduct: IProduct | null;
-  loading: boolean;
-  error: string | null;
-}
+import { productFetchErrorNoti } from "../../utils/product.utils";
 
 const name = "productState";
 const initialState: IProductState = {
   products: [],
   selectedProduct: null,
   loading: false,
-  error: null,
 };
 
 const fetchAllProducts = createAsyncThunk(
   `${name}/fetchAllProducts`,
-  async () => {
-    const response = await axiosInstance.get(API_ENDPOINTS.PRODUCTS);
-    return response.data;
+  async (_, { dispatch, rejectWithValue }) => {
+    let response;
+    try {
+      response = await axiosInstance.get(API_ENDPOINTS.PRODUCTS);
+    } catch (error) {
+      console.log(error);
+      dispatch(setNotification(productFetchErrorNoti()));
+      return rejectWithValue(error);
+    }
+    return response.data as TProductsApiResponeData;
   },
 );
 
@@ -42,9 +49,8 @@ const productState = createSlice({
       state.loading = false;
       state.products = action.payload;
     });
-    builder.addCase(fetchAllProducts.rejected, (state, action) => {
+    builder.addCase(fetchAllProducts.rejected, (state) => {
       state.loading = false;
-      state.error = action.error.message as string;
     });
   },
 });

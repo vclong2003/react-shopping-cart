@@ -1,43 +1,53 @@
+import { RootState } from "..";
+import {
+  ICartApiResponeData,
+  ICartItem,
+  ICartState,
+} from "../../interfaces/cart.interfaces";
+
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ICartApiData, ICartApiResponeData, ICartItem } from "../../interfaces";
+import { setNotification } from "./notification";
+
 import { axiosInstance } from "../../lib/axios";
 import { API_ENDPOINTS } from "../../config/api";
-import { RootState } from "..";
-
-interface ICartState {
-  cart: ICartItem[];
-  loading: boolean;
-  error: string | null;
-}
+import {
+  cartCheckoutErrorNoti,
+  cartCheckoutSuccessNoti,
+  getCartApiData,
+} from "../../utils/cart.utils";
 
 const name = "cartState";
 const initialState: ICartState = {
   cart: [],
   loading: false,
-  error: null,
 };
 
 const checkout = createAsyncThunk(
   `${name}/checkout`,
-  async (_, { getState }) => {
+  async (_, { getState, dispatch }) => {
     const {
       cartState: { cart },
     } = getState() as RootState;
-    if (cart.length === 0) return;
 
-    const cartApiData: ICartApiData = {
-      paySuccess: true,
-      productsInOrder: cart.map((cartItem) => ({
-        productId: cartItem.product.productId,
-        quantity: cartItem.quantity,
-      })),
-    };
+    const cartApiData = getCartApiData(cart);
 
-    const response = await axiosInstance.post(
-      API_ENDPOINTS.CHECKOUT,
-      cartApiData,
-    );
-    return response.data as ICartApiResponeData;
+    let response;
+
+    try {
+      response = await axiosInstance.post(API_ENDPOINTS.CHECKOUT, cartApiData);
+    } catch (error) {
+      console.log(error);
+      return dispatch(setNotification(cartCheckoutErrorNoti()));
+    }
+
+    const { success } = response.data as ICartApiResponeData;
+
+    if (success) {
+      dispatch(clearCart());
+      return dispatch(setNotification(cartCheckoutSuccessNoti()));
+    }
+
+    dispatch(setNotification(cartCheckoutErrorNoti()));
   },
 );
 
@@ -83,31 +93,28 @@ const cartState = createSlice({
         (cart) => cart.product.productId !== action.payload,
       );
     },
+    clearCart: (state) => {
+      state.cart = [];
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(checkout.pending, (state) => {
-      state.error = null;
       state.loading = true;
     });
-    builder.addCase(checkout.fulfilled, (state, action) => {
+    builder.addCase(checkout.fulfilled, (state) => {
       state.loading = false;
-      const { success } = action.payload || {};
-
-      if (success) {
-        state.cart = [];
-        return;
-      }
-
-      state.error = "Something went wrong";
     });
-    builder.addCase(checkout.rejected, (state, action) => {
+    builder.addCase(checkout.rejected, (state) => {
       state.loading = false;
-      state.error = action.error.message as string;
     });
   },
 });
 
-export const { addCartItem, changeItemQuantity, removeItemFromCart } =
-  cartState.actions;
+export const {
+  addCartItem,
+  changeItemQuantity,
+  removeItemFromCart,
+  clearCart,
+} = cartState.actions;
 export { checkout };
 export default cartState;
