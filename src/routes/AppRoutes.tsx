@@ -1,6 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router";
+
 import Layout from "../components/Layout/Layout";
+import { Route, Routes } from "react-router";
+
 import { layoutRoutes } from "./layoutRoutes";
 import { standaloneRoutes } from "./standaloneRoutes";
 

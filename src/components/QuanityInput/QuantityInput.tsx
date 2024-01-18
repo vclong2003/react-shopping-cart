@@ -1,6 +1,7 @@
 import React from "react";
-import { ChangeEvent, useEffect } from "react";
 import * as S from "./QuantityInput.styled";
+
+import { ChangeEvent, useEffect } from "react";
 
 interface IQuantityInput {
   quantity: number;
