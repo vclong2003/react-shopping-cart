@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import { AppDispatch, RootState } from "../store";
+import { AppDispatch } from "../store";
 
+import { SHIPPING_COST } from "../config/feeRelated";
 import { checkout as checkoutAction } from "../store/slices/cart";
 import { calcCartSubTotal } from "../utils/cart.utils";
 import { useNavigate } from "react-router-dom";
+import { ICartItem } from "../interfaces/cart.interfaces";
 
-export default function useCartSummary() {
-  const { cart, loading } = useSelector((state: RootState) => state.cartState);
+export default function useCartSummary(cart: ICartItem[]) {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const shippingCost = 10;
+  const shippingCost = SHIPPING_COST;
 
   useEffect(() => {
     setTotalPrice(calcCartSubTotal(cart));
@@ -25,7 +26,7 @@ export default function useCartSummary() {
   };
 
   const checkout = () => {
-    dispatch(checkoutAction());
+    dispatch(checkoutAction(cart));
     setIsPopupVisible(false);
   };
 
@@ -38,9 +39,7 @@ export default function useCartSummary() {
   };
 
   return {
-    cart,
     onContinueShopping,
-    loading,
     totalPrice,
     shippingCost,
     isPopupVisible,

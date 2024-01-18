@@ -18,7 +18,7 @@ export default function Products(): JSX.Element {
 
   useEffect(() => {
     dispatch(fetchAllProducts());
-  }, [dispatch]);
+  }, []);
 
   const handleClosePopup = () => {
     dispatch(selectProduct(null));
