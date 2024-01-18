@@ -16,7 +16,7 @@ export default function ConfirmPopup({
   return (
     <Popup show={show} onClose={onCancel}>
       <S.PopupContent>
-        <S.TextContent>Do you want to purcharese 🤔?</S.TextContent>
+        <S.TextContent>Do you want to purchase 🤔?</S.TextContent>
         <S.BtnCancel onClick={onCancel}>No</S.BtnCancel>
         <S.BtnCheckout onClick={onCheckout}>Yes</S.BtnCheckout>
       </S.PopupContent>
