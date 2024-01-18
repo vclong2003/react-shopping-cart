@@ -4,7 +4,7 @@ import * as S from "./NavList.styled";
 import NavItem from "../NavItem/NavItem";
 
 const NAV_LINKS = [
-  { name: "Home", path: "/" },
+  { name: "Home", path: "/home" },
   { name: "Products", path: "/products" },
   { name: "Reviews", path: "/reviews" },
 ];
