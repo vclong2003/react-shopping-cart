@@ -14,7 +14,7 @@ export default function CartList() {
           <CartItem key={cartItem.product.productId} cartItem={cartItem} />
         ))
       ) : (
-        <S.EmptyCartMessage>You have no prducts in cart.</S.EmptyCartMessage>
+        <S.EmptyCartMessage>You have no products in cart.</S.EmptyCartMessage>
       )}
     </S.CartListContainer>
   );

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import commingSoon from "../../assets/images/commingSoon.png";
+import commingSoon from "../../assets/images/comming_soon.png";
 
 export const GlobalStyle = styled.div`
   background-image: url(${commingSoon});
