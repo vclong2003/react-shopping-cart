@@ -1,14 +1,24 @@
 import React from "react";
 import * as S from "./Summary.styled";
+
 import useCartSummary from "../../../hooks/useCartSummary";
-import { useNavigate } from "react-router-dom";
-import { roundPrice } from "../../../utils/number.utils";
+import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 import LoadingOverlay from "../../../components/LoadingOverlay/LoadingOverlay";
 
+import { roundPrice } from "../../../utils/number.utils";
+
 const Summary = (): JSX.Element => {
-  const { cart, totalPrice, shippingCost, onCheckout, loading } =
-    useCartSummary();
-  const navigate = useNavigate();
+  const {
+    cart,
+    totalPrice,
+    shippingCost,
+    loading,
+    onContinueShopping,
+    isPopupVisible,
+    openPopup,
+    checkout,
+    cancelCheckout,
+  } = useCartSummary();
 
   return (
     <S.Summary>
@@ -29,14 +39,18 @@ const Summary = (): JSX.Element => {
             ${roundPrice(totalPrice + shippingCost)}
           </S.TotalAmount>
         </S.SummaryItem>
-
-        <S.CheckoutButton disabled={cart.length === 0} onClick={onCheckout}>
+        <S.CheckoutButton disabled={cart.length === 0} onClick={openPopup}>
           Checkout
         </S.CheckoutButton>
-        <S.ContinueButton onClick={() => navigate("/products")}>
+        <S.ContinueButton onClick={onContinueShopping}>
           Continue shopping
         </S.ContinueButton>
       </S.SummaryContainer>
+      <ConfirmPopup
+        show={isPopupVisible}
+        onCheckout={checkout}
+        onCancel={cancelCheckout}
+      />
     </S.Summary>
   );
 };
