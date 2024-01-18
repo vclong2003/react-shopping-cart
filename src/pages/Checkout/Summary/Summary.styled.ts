@@ -73,3 +73,18 @@ export const ShippingCost = styled.div`
 export const CostPrice = styled.h4`
   color: var(--black);
 `;
+
+export const PopupContent = styled.div`
+  text-align: center;
+  padding: var(--s-3);
+`;
+export const TextContent = styled.p`
+  margin-bottom: var(--s-3);
+`;
+export const BtnCheckout = styled.button`
+  font-size: var(--fs-lg);
+  margin: var(--s-1);
+  padding: var(--s-3) var(--s-4);
+  cursor: pointer;
+  font-weight: bold;
+`;
