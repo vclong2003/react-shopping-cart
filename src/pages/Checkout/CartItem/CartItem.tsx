@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { ICartItem } from "../../../interfaces";
-import QuantityInput from "../../../components/QuanityInput/QuantityInput";
 import * as S from "./CartItem.styled";
+
+import QuantityInput from "../../../components/QuanityInput/QuantityInput";
+
+import { ICartItem } from "../../../interfaces/cart.interfaces";
+
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
 import {

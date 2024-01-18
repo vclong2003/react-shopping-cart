@@ -1,6 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../store";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { AppDispatch, RootState } from "../store";
+
 import { checkout } from "../store/slices/cart";
 import { calcCartSubTotal } from "../utils/cart.utils";
 

@@ -1,19 +1,20 @@
+import { RootState } from "..";
+import {
+  ICartApiResponeData,
+  ICartItem,
+  ICartState,
+} from "../../interfaces/cart.interfaces";
+
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ICartApiResponeData, ICartItem } from "../../interfaces";
+import { setNotification } from "./notification";
+
 import { axiosInstance } from "../../lib/axios";
 import { API_ENDPOINTS } from "../../config/api";
-import { RootState } from "..";
 import {
   cartCheckoutErrorNoti,
   cartCheckoutSuccessNoti,
   getCartApiData,
 } from "../../utils/cart.utils";
-import { setNotification } from "./notification";
-
-interface ICartState {
-  cart: ICartItem[];
-  loading: boolean;
-}
 
 const name = "cartState";
 const initialState: ICartState = {
