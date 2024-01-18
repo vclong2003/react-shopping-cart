@@ -6,19 +6,21 @@ import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 import LoadingOverlay from "../../../components/LoadingOverlay/LoadingOverlay";
 
 import { roundPrice } from "../../../utils/number.utils";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
 
 const Summary = (): JSX.Element => {
+  const { cart, loading } = useSelector((state: RootState) => state.cartState);
+
   const {
-    cart,
     totalPrice,
     shippingCost,
-    loading,
     onContinueShopping,
     isPopupVisible,
     openPopup,
     checkout,
     cancelCheckout,
-  } = useCartSummary();
+  } = useCartSummary(cart);
 
   return (
     <S.Summary>

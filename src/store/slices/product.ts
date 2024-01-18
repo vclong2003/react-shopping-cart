@@ -43,7 +43,7 @@ const productState = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchAllProducts.pending, (state) => {
-      state.loading = true;
+      if (state.products.length === 0) state.loading = true; // run only on initial load
     });
     builder.addCase(fetchAllProducts.fulfilled, (state, action) => {
       state.loading = false;
