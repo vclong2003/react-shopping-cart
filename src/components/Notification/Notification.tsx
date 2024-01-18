@@ -18,7 +18,7 @@ const Notification = () => {
 
     const timer = setTimeout(() => {
       dispatch(clearNotification());
-    }, 2000);
+    }, 2500);
 
     return () => {
       clearTimeout(timer);
