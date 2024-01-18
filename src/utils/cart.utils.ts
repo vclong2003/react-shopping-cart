@@ -7,7 +7,7 @@ import { ICartApiData, ICartItem } from "../interfaces/cart.interfaces";
  * @returns {INotification}
  */
 const cartCheckoutSuccessNoti = (): INotification => ({
-  message: "Checkout successful! 😀",
+  message: "Checkout successful, thank you for using our product! 😀",
   type: ENotificationType.Success,
 });
 
