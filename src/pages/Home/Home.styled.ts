@@ -1,15 +1,13 @@
-
 import styled from "styled-components";
 import commingSoon from "../../assets/images/commingSoon.png";
 
 export const GlobalStyle = styled.div`
-
   background-image: url(${commingSoon});
   min-height: 60rem;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: right center;
+  width: 50%;
+  height: auto;
   padding: var(--s-4) 0;
 `;
- 
-
-
