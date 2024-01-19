@@ -16,6 +16,12 @@ export const SummaryContainer = styled.div`
   border-radius: var(--br-md);
 `;
 
+export const TopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const BottomContainer = styled.div``;
+
 export const SummaryTitle = styled.h3`
   margin-bottom: var(--s-4);
   color: var(--black);
@@ -46,7 +52,6 @@ export const CheckoutButton = styled(Button)`
   font-size: var(--fs-lg);
   color: var(--white);
   border: none;
-  cursor: pointer;
   width: 100%;
 `;
 
