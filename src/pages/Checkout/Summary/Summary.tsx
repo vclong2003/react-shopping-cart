@@ -33,12 +33,12 @@ const Summary = (): JSX.Element => {
         </S.SummaryItem>
         <S.SummaryItem>
           <S.ShippingCost>Shipping Cost:</S.ShippingCost>
-          <S.CostPrice>${shippingCost}</S.CostPrice>
+          <S.CostPrice>${cart.length === 0 ? 0 : shippingCost}</S.CostPrice>
         </S.SummaryItem>
         <S.SummaryItem>
           <S.TotalLabel>Total:</S.TotalLabel>
           <S.TotalAmount>
-            ${roundPrice(totalPrice + shippingCost)}
+            ${cart.length === 0 ? 0 : roundPrice(totalPrice + shippingCost)}
           </S.TotalAmount>
         </S.SummaryItem>
         <S.CheckoutButton disabled={cart.length === 0} onClick={openPopup}>
