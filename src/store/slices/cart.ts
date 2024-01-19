@@ -1,4 +1,3 @@
-import { RootState } from "..";
 import {
   ICartApiResponeData,
   ICartItem,
@@ -24,11 +23,7 @@ const initialState: ICartState = {
 
 const checkout = createAsyncThunk(
   `${name}/checkout`,
-  async (_, { getState, dispatch }) => {
-    const {
-      cartState: { cart },
-    } = getState() as RootState;
-
+  async (cart: ICartItem[], { dispatch }) => {
     const cartApiData = getCartApiData(cart);
 
     let response;
@@ -66,7 +61,6 @@ const cartState = createSlice({
         (cartItem) => cartItem.product.productId === newProductId,
       );
 
-      // Item already exists in cart
       if (existingCartItemIndex !== -1) {
         state.cart[existingCartItemIndex].quantity += newItemQuantity;
         return;

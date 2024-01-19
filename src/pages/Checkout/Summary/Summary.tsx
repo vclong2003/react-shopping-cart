@@ -1,26 +1,26 @@
 import React from "react";
 import * as S from "./Summary.styled";
+
 import useCartSummary from "../../../hooks/useCartSummary";
-import { useNavigate } from "react-router-dom";
-import { roundPrice } from "../../../utils/number.utils";
+import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 import LoadingOverlay from "../../../components/LoadingOverlay/LoadingOverlay";
-import { useState } from "react";
-import Popup from "../../../components/Popup/Popup";
+
+import { roundPrice } from "../../../utils/number.utils";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
 
 const Summary = (): JSX.Element => {
-  const { cart, totalPrice, shippingCost, onCheckout, loading } =
-    useCartSummary();
-  const navigate = useNavigate();
+  const { cart, loading } = useSelector((state: RootState) => state.cartState);
 
-  const [showPopup, setShowPopup] = useState(false);
-
-  const handleCheckout = () => {
-    setShowPopup(true);
-  };
-
-  const handlePopupClose = () => {
-    setShowPopup(false);
-  };
+  const {
+    totalPrice,
+    shippingCost,
+    onContinueShopping,
+    isPopupVisible,
+    openPopup,
+    checkout,
+    cancelCheckout,
+  } = useCartSummary(cart);
 
   return (
     <S.Summary>
@@ -41,36 +41,18 @@ const Summary = (): JSX.Element => {
             ${roundPrice(totalPrice + shippingCost)}
           </S.TotalAmount>
         </S.SummaryItem>
-
-        <S.CheckoutButton
-          disabled={cart.length === 0}
-          onClick={() => {
-            handleCheckout();
-          }}
-        >
+        <S.CheckoutButton disabled={cart.length === 0} onClick={openPopup}>
           Checkout
         </S.CheckoutButton>
-        <S.ContinueButton onClick={() => navigate("/products")}>
+        <S.ContinueButton onClick={onContinueShopping}>
           Continue shopping
         </S.ContinueButton>
       </S.SummaryContainer>
-
-      {showPopup && (
-        <Popup show={showPopup} onClose={handlePopupClose}>
-          <S.PopupContent>
-            <S.TextContent>Do you want to purcharese 🤔?</S.TextContent>
-            <S.BtnCheckout
-              onClick={() => {
-                onCheckout();
-                handlePopupClose();
-              }}
-            >
-              Yes
-            </S.BtnCheckout>
-            <S.BtnCheckout onClick={handlePopupClose}>No</S.BtnCheckout>
-          </S.PopupContent>
-        </Popup>
-      )}
+      <ConfirmPopup
+        show={isPopupVisible}
+        onCheckout={checkout}
+        onCancel={cancelCheckout}
+      />
     </S.Summary>
   );
 };
