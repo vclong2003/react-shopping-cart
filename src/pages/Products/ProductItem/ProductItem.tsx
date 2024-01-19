@@ -1,10 +1,10 @@
 import React from "react";
 import S from "./ProductItem.styled";
 
-import { AppDispatch, RootState } from "../../../store";
+import { AppDispatch } from "../../../store";
 import { IProduct } from "../../../interfaces/product.interfaces";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { selectProduct } from "../../../store/slices/product";
 
 interface IProductItemProps {
@@ -13,22 +13,14 @@ interface IProductItemProps {
 
 export default function ProductItem({ product }: IProductItemProps) {
   const dispatch = useDispatch<AppDispatch>();
-  const { selectedProduct } = useSelector(
-    (state: RootState) => state.productState,
-  );
-  const handleIsSelected = () => {
-    if (selectedProduct?.productId === productId) {
-      return true;
-    }
-    return false;
-  };
-  const { productId, imageUrl, productName, description, price } = product;
+
+  const { imageUrl, productName, description, price } = product;
   const handleSelect = () => {
     dispatch(selectProduct(product));
   };
 
   return (
-    <S.ProductItem $isSelected={handleIsSelected()}>
+    <S.ProductItem>
       <S.ImageContainer>
         <S.Image src={imageUrl} alt="" />
       </S.ImageContainer>

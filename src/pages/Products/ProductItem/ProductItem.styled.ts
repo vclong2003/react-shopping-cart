@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-interface IProductItemProps {
-  $isSelected: boolean;
-}
-
-const ProductItem = styled.div<IProductItemProps>`
+const ProductItem = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -12,8 +8,7 @@ const ProductItem = styled.div<IProductItemProps>`
   gap: var(--s-4);
   box-shadow: var(--shadow-md);
   border-radius: var(--br-md);
-  background-color: ${({ $isSelected }) =>
-    $isSelected ? "var(--gray-light-1)" : "var(--white)"};
+  background-color: var(--white);
 `;
 
 const ImageContainer = styled.div`
