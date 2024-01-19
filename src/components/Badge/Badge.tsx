@@ -10,7 +10,7 @@ export default function Badge({ count, children }: IBadgeProps): JSX.Element {
   return (
     <S.BadgeContainer>
       <S.Badge $hidden={count === 0}>{count}</S.Badge>
-      <div style={{ position: "relative" }}>{children}</div>
+      <div>{children}</div>
     </S.BadgeContainer>
   );
 }
