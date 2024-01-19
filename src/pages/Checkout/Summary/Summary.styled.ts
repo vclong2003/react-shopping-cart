@@ -10,11 +10,17 @@ export const Summary = styled.div`
 `;
 
 export const SummaryContainer = styled.div`
-  padding: var(--s-4);
+  padding: var(--s-6);
   background-color: var(--white);
   box-shadow: var(--shadow-md);
   border-radius: var(--br-md);
 `;
+
+export const TopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const BottomContainer = styled.div``;
 
 export const SummaryTitle = styled.h3`
   margin-bottom: var(--s-4);
@@ -46,8 +52,8 @@ export const CheckoutButton = styled(Button)`
   font-size: var(--fs-lg);
   color: var(--white);
   border: none;
-  cursor: pointer;
   width: 100%;
+  box-shadow: var(--shadow-md);
 `;
 
 export const ContinueButton = styled(Button)`
@@ -56,6 +62,7 @@ export const ContinueButton = styled(Button)`
   font-size: var(--fs-lg);
   border: 1px solid var(--blue);
   color: var(--blue);
+  box-shadow: var(--shadow-md);
 `;
 
 export const Subtotal = styled.div`
