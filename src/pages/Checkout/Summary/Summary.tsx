@@ -26,28 +26,32 @@ const Summary = (): JSX.Element => {
     <S.Summary>
       {loading && <LoadingOverlay />}
       <S.SummaryContainer>
-        <S.SummaryTitle>Order Info</S.SummaryTitle>
-        <S.SummaryItem>
-          <S.Subtotal>Subtotal:</S.Subtotal>
-          <S.TotalPrice>${roundPrice(totalPrice)}</S.TotalPrice>
-        </S.SummaryItem>
-        <S.SummaryItem>
-          <S.ShippingCost>Shipping Cost:</S.ShippingCost>
-          <S.CostPrice>${shippingCost}</S.CostPrice>
-        </S.SummaryItem>
-        <S.SummaryItem>
-          <S.TotalLabel>Total:</S.TotalLabel>
-          <S.TotalAmount>
-            ${roundPrice(totalPrice + shippingCost)}
-          </S.TotalAmount>
-        </S.SummaryItem>
+        <S.TopContainer>
+          <S.SummaryTitle>Order Info</S.SummaryTitle>
+          <S.SummaryItem>
+            <S.Subtotal>Subtotal:</S.Subtotal>
+            <S.TotalPrice>${roundPrice(totalPrice)}</S.TotalPrice>
+          </S.SummaryItem>
+          <S.SummaryItem>
+            <S.ShippingCost>Shipping Cost:</S.ShippingCost>
+            <S.CostPrice>${shippingCost}</S.CostPrice>
+          </S.SummaryItem>
+          <S.SummaryItem>
+            <S.TotalLabel>Total:</S.TotalLabel>
+            <S.TotalAmount>
+              ${roundPrice(totalPrice + shippingCost)}
+            </S.TotalAmount>
+          </S.SummaryItem>
+        </S.TopContainer>
+      </S.SummaryContainer>
+      <S.BottomContainer>
         <S.CheckoutButton disabled={cart.length === 0} onClick={openPopup}>
           Checkout
         </S.CheckoutButton>
         <S.ContinueButton onClick={onContinueShopping}>
           Continue shopping
         </S.ContinueButton>
-      </S.SummaryContainer>
+      </S.BottomContainer>
       <ConfirmPopup
         show={isPopupVisible}
         onCheckout={checkout}
