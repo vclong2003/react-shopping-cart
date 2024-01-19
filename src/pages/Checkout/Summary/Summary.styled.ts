@@ -10,7 +10,7 @@ export const Summary = styled.div`
 `;
 
 export const SummaryContainer = styled.div`
-  padding: var(--s-4);
+  padding: var(--s-6);
   background-color: var(--white);
   box-shadow: var(--shadow-md);
   border-radius: var(--br-md);
@@ -53,6 +53,7 @@ export const CheckoutButton = styled(Button)`
   color: var(--white);
   border: none;
   width: 100%;
+  box-shadow: var(--shadow-md);
 `;
 
 export const ContinueButton = styled(Button)`
@@ -61,6 +62,7 @@ export const ContinueButton = styled(Button)`
   font-size: var(--fs-lg);
   border: 1px solid var(--blue);
   color: var(--blue);
+  box-shadow: var(--shadow-md);
 `;
 
 export const Subtotal = styled.div`
