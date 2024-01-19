@@ -8,6 +8,8 @@ src
 |
 +-- config            # all the global configuration, env variables etc. get exported from here and used in the app
 |
++-- enum              # all enums
+|
 +-- pages             # all the pages of the application
 |
 +-- hooks             # custom hooks used across the application
